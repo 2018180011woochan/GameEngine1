@@ -10,6 +10,8 @@ public class CHARACTER : MonoBehaviour
     float CHARACTER_ROTATE = 10.0f;
     float JUMPFORCE = 7.0f;
     private bool ISGROUND = true;
+    private bool ACTIONKEY_ON = false;
+    private bool ISCONTROLABLE = true;
 
     float h, v;
     void Start()
@@ -20,9 +22,12 @@ public class CHARACTER : MonoBehaviour
 
     void FixedUpdate()
     {
-        MOVE();
-        JUMP();
-
+        if (ISCONTROLABLE)
+        {
+            MOVE();
+            JUMP();
+            ACTION();
+        }
     }
     void MOVE()
     {
@@ -63,4 +68,85 @@ public class CHARACTER : MonoBehaviour
             ISGROUND = true;
         }
     }
+
+
+
+
+    // vvv SUNKUE
+    void ACTION()
+    {
+        ACTIONKEY_ON = Input.GetKey(KeyCode.LeftControl);
+    }
+
+    internal bool GET_ACTIONKEY_ON()
+    {
+        return ACTIONKEY_ON;
+    }
+
+
+    void ReadyPipeAnimate()
+    {
+        ACTIONKEY_ON = false;
+        ISCONTROLABLE = false;
+        RIGIDBODY.detectCollisions = false;
+        RIGIDBODY.useGravity = false;
+        RIGIDBODY.freezeRotation = true;
+        RIGIDBODY.velocity = Vector3.zero;
+        ANIMATOR.SetBool("IS_RUN", false);
+    }
+
+    void FinishPipeAnimate()
+    {
+        ISCONTROLABLE = true;
+        RIGIDBODY.detectCollisions = true;
+        RIGIDBODY.useGravity = true;
+        RIGIDBODY.freezeRotation = false;
+    }
+
+    internal void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
+    {
+        ReadyPipeAnimate();
+        transform.position = pipe.GetHolePositionOutside();
+        StartCoroutine(AnimateOnPipeAction(pipe, true));
+    }
+
+    internal void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
+    {
+        ReadyPipeAnimate();
+        transform.position = pipe.GetHolePositionInside();
+        StartCoroutine(AnimateOnPipeAction(pipe, false));
+    }
+
+    IEnumerator AnimateOnPipeAction(YSK_PIPE_HOLE_SCRIPT pipe, bool enter)
+    {
+        const float animateTime = 1f;
+        const float animateLength = 3f;
+        const float animateSpeedScalar = animateLength / animateTime;
+
+        float animateSpeedperSec = animateSpeedScalar;
+
+        if (enter)
+        {
+            animateSpeedperSec *= -1;
+        }
+
+        var localUp = pipe.transform.up;
+
+        for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
+        {
+            float animateSpeed = animateSpeedperSec * Time.deltaTime;
+            transform.position += localUp * animateSpeed;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        if (enter)
+        {
+            pipe.PassedOut();
+        }
+        else
+        {
+            FinishPipeAnimate();
+        }
+    }
+    // ^^^ SUNKUE
 }
