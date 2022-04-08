@@ -4,11 +4,13 @@
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
+[Ll]ogs/
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
 Assets/EntityCache
- 
+[Uu]ser[Ss]ettings/
+
 # 유니티 내장녹화 폴더 깃이그노어에 추가
 Recordings/
  
