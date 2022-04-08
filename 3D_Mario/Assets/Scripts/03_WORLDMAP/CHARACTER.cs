@@ -69,7 +69,13 @@ public class CHARACTER : MonoBehaviour
         }
     }
 
-
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            ISGROUND = true;
+        }
+    }
 
 
     // vvv SUNKUE
