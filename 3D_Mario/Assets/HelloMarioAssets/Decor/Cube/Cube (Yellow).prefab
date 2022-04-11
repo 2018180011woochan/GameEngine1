@@ -103,5 +103,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (Yellow)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e8744e9fb6bbd24ea7befef97fba01b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e8744e9fb6bbd24ea7befef97fba01b, type: 3}
+--- !u!1 &1775843726470530281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e8744e9fb6bbd24ea7befef97fba01b, type: 3}
+  m_PrefabInstance: {fileID: 1469433124666276280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &22136084226653057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775843726470530281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.068329, y: 4.0614777, z: 4.126068}
+  m_Center: {x: 0.018875122, y: 2.0379848, z: -0.013366699}

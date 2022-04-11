@@ -7,7 +7,6 @@ public class YSK_QUETIONBOX : MonoBehaviour
 {
     public GameObject emptyBoxPrefab;
     public GameObject includedItemPrefab;
-    GameObject _gened_item;
     CHARACTER _mario;
     bool _used = false;
 
@@ -34,6 +33,11 @@ public class YSK_QUETIONBOX : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        
+    }
+
     void OnHeading()
     {
         //GetComponentsInChildren<GameObject>().ForEach(name => { name.SetActive(false); });
@@ -49,7 +53,7 @@ public class YSK_QUETIONBOX : MonoBehaviour
         float animateSpeedScalar = animateLength / animateTime;
         float animateSpeedperSec = animateSpeedScalar;
 
-        _gened_item = Instantiate(includedItemPrefab, transform.position, transform.rotation, null);
+        GameObject _gened_item = Instantiate(includedItemPrefab, transform.position, transform.rotation, null);
 
         for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
         {

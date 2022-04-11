@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candlestand
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 32a3ba1b4ce837e4c9a7f8fb599e1a70, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 32a3ba1b4ce837e4c9a7f8fb599e1a70, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -81,3 +85,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a3ba1b4ce837e4c9a7f8fb599e1a70, type: 3}
+--- !u!1 &5521542713108573233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 32a3ba1b4ce837e4c9a7f8fb599e1a70, type: 3}
+  m_PrefabInstance: {fileID: 5521542713108474515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4549138185202351423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5521542713108573233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.534041, y: 1.4942578, z: 1.5238476}
+  m_Center: {x: 0.00476923, y: 0.76043504, z: 0.0006879807}
