@@ -6,11 +6,12 @@ public class CHARACTER : MonoBehaviour
 {
     private Animator ANIMATOR;
     private Rigidbody RIGIDBODY;
-    float CHARACTER_SPPED = 4.0f;
+    public float CHARACTER_SPPED = 12.0f;
     float CHARACTER_ROTATE = 10.0f;
-    float JUMPFORCE = 7.0f;
-    private bool ISGROUND = true;
-
+    public float JUMPFORCE = 120.0f;
+    public bool ISGROUND = true;
+    public GameObject Mario;
+    public CAHRACTER_DUST _Dust;
     float h, v;
     void Start()
     {
@@ -46,12 +47,14 @@ public class CHARACTER : MonoBehaviour
 
     void JUMP()
     {
+        //!> 중력 가속도 -9.81 -> -40으로 수정. Edit - ProjectSetting - Physics
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
-            //!> 위 방향으로 JUMPFORCE만큼 힘을 가함, Impulse>>순간적인 힘으로 무게 적용
-            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE, ForceMode.Impulse);
-            ISGROUND = false;
+            //!> 위 방향으로 JUMPFORCE만큼 힘을 가함
+            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
+            _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
+            ISGROUND = false;
         }
     }
 
