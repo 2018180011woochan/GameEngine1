@@ -12,7 +12,6 @@ public class CHARACTER : MonoBehaviour
     private bool ISCONTROLABLE = true;
     public float JUMPFORCE = 120.0f;
     public bool ISGROUND = true;
-    public GameObject Mario;
     public CAHRACTER_DUST _Dust;
 
     float h, v;
@@ -57,7 +56,7 @@ public class CHARACTER : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
             //!> �� �������� JUMPFORCE��ŭ ���� ����
-            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
