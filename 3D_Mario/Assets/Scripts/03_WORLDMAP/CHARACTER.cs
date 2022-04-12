@@ -6,7 +6,7 @@ public class CHARACTER : MonoBehaviour
 {
     private Animator ANIMATOR;
     private Rigidbody RIGIDBODY;
-    float CHARACTER_SPPED = 4.0f;
+    float CHARACTER_SPPED = 8.0f;
     float CHARACTER_ROTATE = 10.0f;
     float JUMPFORCE = 7.0f;
     private bool ISGROUND = true;
