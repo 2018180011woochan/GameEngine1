@@ -58,12 +58,28 @@ public class CHARACTER : MonoBehaviour
         }
     }
 
-    //!> 캐릭터와 충돌한 물체의 태그가 Ground일때 점프 갱신
+    
     void OnCollisionEnter(Collision collision)
     {
+        //!> 캐릭터와 충돌한 물체의 태그가 Ground일때 점프 갱신
         if (collision.gameObject.CompareTag("Ground"))
         {
             ISGROUND = true;
+            
+        }
+
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            if (DATA_MNG.H.CHARACTER_HP == 0)
+            {
+                DATA_MNG.H.CHARACTER_HP = 1;
+                DATA_MNG.H.CHARACTER_LIFE -= 1;
+                // 이후 게임오버 제작
+            }
+            else
+            {
+                DATA_MNG.H.CHARACTER_HP -= 1;
+            }
         }
     }
 }
