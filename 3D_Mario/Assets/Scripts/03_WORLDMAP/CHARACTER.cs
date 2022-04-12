@@ -6,12 +6,14 @@ public class CHARACTER : MonoBehaviour
 {
     private Animator ANIMATOR;
     private Rigidbody RIGIDBODY;
-    float CHARACTER_SPPED = 4.0f;
+    public float CHARACTER_SPPED = 12.0f;
     float CHARACTER_ROTATE = 10.0f;
-    float JUMPFORCE = 7.0f;
-    private bool ISGROUND = true;
     private bool ACTIONKEY_ON = false;
     private bool ISCONTROLABLE = true;
+    public float JUMPFORCE = 120.0f;
+    public bool ISGROUND = true;
+    public GameObject Mario;
+    public CAHRACTER_DUST _Dust;
 
     float h, v;
     void Start()
@@ -51,16 +53,18 @@ public class CHARACTER : MonoBehaviour
 
     void JUMP()
     {
+        //!> ï¿½ß·ï¿½ ï¿½ï¿½ï¿½Óµï¿½ -9.81 -> -40ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. Edit - ProjectSetting - Physics
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
-            //!> À§ ¹æÇâÀ¸·Î JUMPFORCE¸¸Å­ ÈûÀ» °¡ÇÔ, Impulse>>¼ø°£ÀûÀÎ ÈûÀ¸·Î ¹«°Ô Àû¿ë
-            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE, ForceMode.Impulse);
-            ISGROUND = false;
+            //!> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JUMPFORCEï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
+            _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
+            ISGROUND = false;
         }
     }
 
-    //!> Ä³¸¯ÅÍ¿Í Ãæµ¹ÇÑ ¹°Ã¼ÀÇ ÅÂ±×°¡ GroundÀÏ¶§ Á¡ÇÁ °»½Å
+    //!> Ä³ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Â±×°ï¿½ Groundï¿½Ï¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
