@@ -5,10 +5,13 @@ using UnityEngine;
 public class BOSS : MonoBehaviour
 {
     public GameObject _player;
+    
     private Animator _animator;
     private Rigidbody _rigidbody;
     float BossSpeed = 0.1f;
     private float PlayerDistance;
+    private float Timer;
+    private bool ISGROUND = true;
     
     private Vector3 MoveDir = new Vector3(0,0,0);
     
@@ -17,15 +20,20 @@ public class BOSS : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
+        _animator.SetBool("isMove", true);
         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        _animator.SetBool("isMove", true);
-        Move();
-        Attack();
+        //_animator.SetBool("isMove", true);
+        if (_animator.GetBool("isMove"))
+        {
+            Move();
+            Attack();   
+            Jump();
+        }
     }
 
     void Move()
@@ -46,6 +54,33 @@ public class BOSS : MonoBehaviour
         else
         {
             _animator.SetBool("isAttack", false);
+        }
+    }
+
+    void Jump()
+    {
+        // 임시로 3초후에 점프하게 나중에 FSM으로 바꿀 예정
+        Timer += Time.deltaTime;
+
+        if (Timer > 3 && ISGROUND)
+        {
+            _animator.SetTrigger("Jump");
+            _rigidbody.AddForce(Vector3.up * 40f, ForceMode.Impulse);
+            ISGROUND = false;
+        }
+
+        if (transform.position.y > 60f)
+        {
+            _rigidbody.AddForce(Vector3.down * 5000f);
+            transform.position += MoveDir * 20f * Time.deltaTime;
+        }
+    }
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            ISGROUND = true;
         }
     }
 }
