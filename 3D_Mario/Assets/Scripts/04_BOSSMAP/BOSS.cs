@@ -5,6 +5,8 @@ using UnityEngine;
 public class BOSS : MonoBehaviour
 {
     public GameObject _player;
+    public GameObject _dust;
+    public ParticleSystem dusteffect;
     
     private Animator _animator;
     private Rigidbody _rigidbody;
@@ -27,6 +29,7 @@ public class BOSS : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        print(transform.position);
         //_animator.SetBool("isMove", true);
         if (_animator.GetBool("isMove"))
         {
@@ -47,7 +50,7 @@ public class BOSS : MonoBehaviour
     {
         PlayerDistance = Vector3.Distance(_player.transform.position, transform.position);
 
-        if (PlayerDistance < 5)
+        if (PlayerDistance < 6)
         {
             _animator.SetBool("isAttack", true);
         }
@@ -65,11 +68,14 @@ public class BOSS : MonoBehaviour
         if (Timer > 3 && ISGROUND)
         {
             _animator.SetTrigger("Jump");
-            _rigidbody.AddForce(Vector3.up * 40f, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * 70f, ForceMode.Impulse);
             ISGROUND = false;
+
+            _dust.transform.position = transform.position;
+            _dust.SetActive(true);
         }
 
-        if (transform.position.y > 60f)
+        if (transform.position.y > 50f)
         {
             _rigidbody.AddForce(Vector3.down * 5000f);
             transform.position += MoveDir * 20f * Time.deltaTime;
