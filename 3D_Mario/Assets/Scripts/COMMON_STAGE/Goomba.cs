@@ -72,9 +72,6 @@ public class Goomba : MonoBehaviour
         isAttack = true;
         anim.SetBool("isAttack", true);
 
-        //yield return new WaitForSeconds(0.1f);
-        //rigid.AddForce(transform.forward * 10, ForceMode.Impulse);
-
         yield return new WaitForSeconds(0.5f);
         rigid.velocity = Vector3.zero;
 

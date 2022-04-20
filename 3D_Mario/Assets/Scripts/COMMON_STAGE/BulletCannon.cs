@@ -10,13 +10,9 @@ public class BulletCannon : MonoBehaviour
     public Transform bulletPos;
     public GameObject bullet;
 
-    void Start()
+    void Awake()
     {
         StartCoroutine(Fire());
-    }
-
-    void Update()
-    {
     }
 
     IEnumerator Fire()
