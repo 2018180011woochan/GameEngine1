@@ -23,7 +23,6 @@ public class CHARACTER : MonoBehaviour
     {
         MOVE();
         JUMP();
-
     }
     void MOVE()
     {
@@ -80,6 +79,25 @@ public class CHARACTER : MonoBehaviour
             {
                 DATA_MNG.H.CHARACTER_HP -= 1;
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("WORLD1-2"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("COMMON_STAGE");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-3"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("Survival");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-4"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("04_BOSSMAP");
         }
     }
 }

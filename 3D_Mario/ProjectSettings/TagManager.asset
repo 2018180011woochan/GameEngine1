@@ -9,6 +9,10 @@ TagManager:
   - Goomba
   - Brick
   - Bullet
+  - ground
+  - WORLD1-2
+  - WORLD1-3
+  - WORLD1-4
   layers:
   - Default
   - TransparentFX
