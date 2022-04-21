@@ -1,0 +1,1508 @@
+fileFormatVersion: 2
+guid: e6bcdb99be572064c8703031aecfe2c6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1333
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c26fc087a7db964c87516975cd96a78
+      internalID: 1676773957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1333
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbaff01c60ea4f458028a9cfaff4332
+      internalID: 256562577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_2
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1333
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b790db763f2bf4397ea3bc1a135677
+      internalID: 288496553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_3
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1333
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceca7b55eb6dc0a48ba99c7a6c14a80f
+      internalID: -1678113604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_4
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1333
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665b440648479e54e870c87ae76c8756
+      internalID: 1240241986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_5
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1333
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64cc18f31fb19241a1fb1431c740381
+      internalID: 1565935580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beafcf0a552570e418aa147f73317e93
+      internalID: -437299616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_7
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9b8efef2c658946923ef6dd4d4025e
+      internalID: -520631166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3018be2df38ca384fa843eafd5466e46
+      internalID: 863870966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_9
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3ced6126982c247aa03c5333d1aa3f
+      internalID: 367545004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f88b1cff7f14ce4b8fe482172653ad4
+      internalID: -225988779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_11
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde2cd1df680f424094199673c7cbc29
+      internalID: 145386159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_12
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1186
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9086f755c8ff8f478a004344a9d89a0
+      internalID: -1958669279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50953b8612b8a894794b6572a6a767f5
+      internalID: -1348869279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_14
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6631cfef74448440aa23aa1c99f1118
+      internalID: -2095782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_15
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009c496eea524364b988bb1bbfd9e300
+      internalID: -1950591598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_16
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74356a7cc03333542b7600e7fb0d45fb
+      internalID: 1919272058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_17
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae14943dd8f7b34899a7d05e78ce8ad
+      internalID: -1538520003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_18
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7667b7d3a744f42abab510ae3a0b52
+      internalID: 1358237280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_19
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1039
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b764e966df2f54cabca98020dfc0c3
+      internalID: 770144883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4e6775539fa70498d86e0372e23181
+      internalID: 238492668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_21
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd0de13d26e82b4b86990c2385790af
+      internalID: 347423402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_22
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d149f8fe6c2ef6a4a8b6fbe783ea4144
+      internalID: 1999115869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_23
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901c705a58d0bfc4c8812f3e0d32cd99
+      internalID: 1668087516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_24
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0d3f2bacd84b04c8253faa26ec6411
+      internalID: 82571586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_25
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830336fb6fff62a43bf5715502b83171
+      internalID: -95571711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_26
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 892
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c77fe56bd59e0740ad0c1e8a79b66e7
+      internalID: 1866070554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69a262151efcda4091dedde137a2706
+      internalID: -1006246674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_28
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcc605bcfc8ea44da322671a4cfe021
+      internalID: 8254364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_29
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9aaf441b4f8933438de3397e7c1ab90
+      internalID: 459448432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_30
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2967bb4a67848af4a9e2c8ced5bb0edd
+      internalID: -6140637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_31
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d0e1484e29f6e47a1897c30f76be47
+      internalID: -232842976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_32
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcbd03bda15517439d6d1382b9b6936
+      internalID: -967180364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_33
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 745
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3546dc25f8983904c9ab779b75bb5946
+      internalID: 508223779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bc593c8901a73408fa60bc6b9754f5
+      internalID: 927800164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_35
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d946fd7d36cb641b833bdf3220221a
+      internalID: 65724725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_36
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c55582b5c7c8c41be3c5cf61a14b62
+      internalID: 1880456332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_37
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a6053ca2e69f642bfcce24a03f036a
+      internalID: 1028331360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_38
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702f2d9670c78eb4aa7eb5a0e0f29159
+      internalID: -1919062336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_39
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ba6e4ccf610dd47900736d8a3e4d1b
+      internalID: -592295925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_40
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 598
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a4487c4b9d8a54589b46f317656796
+      internalID: 1281986480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac056bed6c7ffe4a8b9536f0a930c2f
+      internalID: -1463834014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_42
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4d430205e4af04f98d00215e424743
+      internalID: -302946320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_43
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c64342bcf08e8458c7a59e721ff57f
+      internalID: 1407927988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_44
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce3eee1d2cfdec43b3b3abd15938998
+      internalID: 1166414695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_45
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad990578494c5f34980e13ed65c08ef6
+      internalID: 648253517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_46
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be3ea7496edf6ab439cb8d876fa4c86e
+      internalID: 1517676632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_47
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 451
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a42bb1bec152a94cae0d1f77278423e
+      internalID: 251055152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60f6865f7e447545a4ee8fd93635fcb
+      internalID: -1429971191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_49
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d83322f1e9a86249bb8b4759dad056a
+      internalID: 1927977896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_50
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c2241410ed9354cb2f7e0655cd1029
+      internalID: 241939552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_51
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf6e49c66cf5b44daed01a19c04dbb2
+      internalID: -21016443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_52
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ae497fd5e41a3409aff562cd48680b
+      internalID: -229183277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_53
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb3e48b5e1deba40a5d1f8981ca4476
+      internalID: 819988279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_54
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 304
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b5daac6fdf01a4f88579f4d0593b36
+      internalID: 2041943417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb08dd65c7fa91c44ad23df590599afe
+      internalID: -615988878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_56
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580c24b47f6b2df4fb8998a0a9427286
+      internalID: 362155671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_57
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cc1b6f0f6ef5f4b84b9c6f1b77fc62
+      internalID: -1617377913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_58
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36cdcd87e402364dbf37feecbf06a62
+      internalID: -936183773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_59
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4201779e750db25469a21dd0bf9c4615
+      internalID: 2055780230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_60
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9cd762d40990b45b13557df0c6ff05
+      internalID: -1423839989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_61
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 157
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fa52eaa10b41f4f810f80d57edf822
+      internalID: -1942356029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarioFont128_996x1480_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 141
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051852e94cf18e74da0bc4c0b57245c3
+      internalID: -252958834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1ec58f3c52ae4324b8674773b6bffa78
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MarioFont128_996x1480_15: -1950591598
+      MarioFont128_996x1480_36: 1880456332
+      MarioFont128_996x1480_61: -1942356029
+      MarioFont128_996x1480_18: 1358237280
+      MarioFont128_996x1480_21: 347423402
+      MarioFont128_996x1480_52: -229183277
+      MarioFont128_996x1480_4: 1240241986
+      MarioFont128_996x1480_11: 145386159
+      MarioFont128_996x1480_10: -225988779
+      MarioFont128_996x1480_38: -1919062336
+      MarioFont128_996x1480_44: 1166414695
+      MarioFont128_996x1480_7: -520631166
+      MarioFont128_996x1480_19: 770144883
+      MarioFont128_996x1480_29: 459448432
+      MarioFont128_996x1480_3: -1678113604
+      MarioFont128_996x1480_25: -95571711
+      MarioFont128_996x1480_35: 65724725
+      MarioFont128_996x1480_6: -437299616
+      MarioFont128_996x1480_32: -967180364
+      MarioFont128_996x1480_33: 508223779
+      MarioFont128_996x1480_42: -302946320
+      MarioFont128_996x1480_13: -1348869279
+      MarioFont128_996x1480_50: 241939552
+      MarioFont128_996x1480_30: -6140637
+      MarioFont128_996x1480_14: -2095782
+      MarioFont128_996x1480_24: 82571586
+      MarioFont128_996x1480_59: 2055780230
+      MarioFont128_996x1480_47: 251055152
+      MarioFont128_996x1480_55: -615988878
+      MarioFont128_996x1480_51: -21016443
+      MarioFont128_996x1480_40: 1281986480
+      MarioFont128_996x1480_57: -1617377913
+      MarioFont128_996x1480_9: 367545004
+      MarioFont128_996x1480_34: 927800164
+      MarioFont128_996x1480_60: -1423839989
+      MarioFont128_996x1480_1: 256562577
+      MarioFont128_996x1480_22: 1999115869
+      MarioFont128_996x1480_53: 819988279
+      MarioFont128_996x1480_27: -1006246674
+      MarioFont128_996x1480_54: 2041943417
+      MarioFont128_996x1480_2: 288496553
+      MarioFont128_996x1480_45: 648253517
+      MarioFont128_996x1480_43: 1407927988
+      MarioFont128_996x1480_58: -936183773
+      MarioFont128_996x1480_41: -1463834014
+      MarioFont128_996x1480_17: -1538520003
+      MarioFont128_996x1480_48: -1429971191
+      MarioFont128_996x1480_49: 1927977896
+      MarioFont128_996x1480_31: -232842976
+      MarioFont128_996x1480_39: -592295925
+      MarioFont128_996x1480_5: 1565935580
+      MarioFont128_996x1480_20: 238492668
+      MarioFont128_996x1480_28: 8254364
+      MarioFont128_996x1480_56: 362155671
+      MarioFont128_996x1480_8: 863870966
+      MarioFont128_996x1480_37: 1028331360
+      MarioFont128_996x1480_62: -252958834
+      MarioFont128_996x1480_0: 1676773957
+      MarioFont128_996x1480_16: 1919272058
+      MarioFont128_996x1480_26: 1866070554
+      MarioFont128_996x1480_12: -1958669279
+      MarioFont128_996x1480_23: 1668087516
+      MarioFont128_996x1480_46: 1517676632
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
