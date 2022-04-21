@@ -10,7 +10,7 @@ public class BOSS : MonoBehaviour
     
     private Animator _animator;
     private Rigidbody _rigidbody;
-    float BossSpeed = 0.2f;
+    float BossSpeed = 0.1f;
     private float PlayerDistance;
     private float Timer;
     private bool ISGROUND = true;
