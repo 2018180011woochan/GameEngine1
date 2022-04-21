@@ -10,7 +10,7 @@ public class BOSS : MonoBehaviour
     
     private Animator _animator;
     private Rigidbody _rigidbody;
-    float BossSpeed = 0.1f;
+    float BossSpeed = 0.2f;
     private float PlayerDistance;
     private float Timer;
     private bool ISGROUND = true;
@@ -65,7 +65,7 @@ public class BOSS : MonoBehaviour
         // 임시로 3초후에 점프하게 나중에 FSM으로 바꿀 예정
         Timer += Time.deltaTime;
 
-        if (Timer > 3 && ISGROUND)
+        if (Timer > 10 && ISGROUND)
         {
             _animator.SetTrigger("Jump");
             _rigidbody.AddForce(Vector3.up * 70f, ForceMode.Impulse);
@@ -75,7 +75,7 @@ public class BOSS : MonoBehaviour
             _dust.SetActive(true);
         }
 
-        if (transform.position.y > 50f)
+        if (transform.position.y > 40f)
         {
             _rigidbody.AddForce(Vector3.down * 5000f);
             transform.position += MoveDir * 20f * Time.deltaTime;
