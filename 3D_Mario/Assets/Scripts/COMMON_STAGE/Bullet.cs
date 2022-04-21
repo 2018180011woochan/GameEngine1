@@ -18,6 +18,9 @@ public class Bullet : MonoBehaviour
     void FixedUpdate()
     {
         trans.Translate(Vector3.forward * speed);
+
+        if (trans.position.x >= 20f || trans.position.x <= -20f)
+            Destroy(gameObject);
     }
 
     void OnCollisionEnter(Collision collision)
