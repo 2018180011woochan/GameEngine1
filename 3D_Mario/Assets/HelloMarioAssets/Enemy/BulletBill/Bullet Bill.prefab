@@ -12,6 +12,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -55,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet Bill
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 54310181928533834, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -81,3 +97,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
+--- !u!1 &7680481949895760078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 19bbca730cd4ada4b9e9fe471005b3ae, type: 3}
+  m_PrefabInstance: {fileID: 1853056104764359111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &-912259184036206495
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680481949895760078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.52697086
+  m_Height: 1.7565106
+  m_Direction: 2
+  m_Center: {x: -0.0037114962, y: -0.0010767579, z: 0.07851243}
+--- !u!114 &-5073508682163952116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7680481949895760078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb26a07c14d3d24f8a1a750c99053f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
