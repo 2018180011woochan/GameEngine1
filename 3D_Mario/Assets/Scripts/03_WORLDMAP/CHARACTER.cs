@@ -8,12 +8,12 @@ public class CHARACTER : MonoBehaviour
     private Rigidbody RIGIDBODY;
     public float CHARACTER_SPPED = 12.0f;
     float CHARACTER_ROTATE = 10.0f;
+    public float JUMPFORCE = 120.0f;
     private bool ACTIONKEY_ON = false;
     private bool ISCONTROLABLE = true;
-    public float JUMPFORCE = 120.0f;
     public bool ISGROUND = true;
+    public GameObject Mario;
     public CAHRACTER_DUST _Dust;
-
     float h, v;
     void Start()
     {
@@ -52,31 +52,58 @@ public class CHARACTER : MonoBehaviour
 
     void JUMP()
     {
-        //!> ï¿½ß·ï¿½ ï¿½ï¿½ï¿½Óµï¿½ -9.81 -> -40ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. Edit - ProjectSetting - Physics
+        //!> Áß·Â °¡¼Óµµ -9.81 -> -40À¸·Î ¼öÁ¤. Edit - ProjectSetting - Physics
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
-            //!> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JUMPFORCEï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE);
+            //!> À§ ¹æÇâÀ¸·Î JUMPFORCE¸¸Å­ ÈûÀ» °¡ÇÔ
+            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
         }
     }
 
-    //!> Ä³ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Â±×°ï¿½ Groundï¿½Ï¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    
     void OnCollisionEnter(Collision collision)
     {
+        //!> Ä³¸¯ÅÍ¿Í Ãæµ¹ÇÑ ¹°Ã¼ÀÇ ÅÂ±×°¡ GroundÀÏ¶§ Á¡ÇÁ °»½Å
         if (collision.gameObject.CompareTag("Ground"))
         {
             ISGROUND = true;
+            
+        }
+
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            if (DATA_MNG.H.CHARACTER_HP == 0)
+            {
+                DATA_MNG.H.CHARACTER_HP = 1;
+                DATA_MNG.H.CHARACTER_LIFE -= 1;
+                // ÀÌÈÄ °ÔÀÓ¿À¹ö Á¦ÀÛ
+            }
+            else
+            {
+                DATA_MNG.H.CHARACTER_HP -= 1;
+            }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("WORLD1-2"))
         {
-            ISGROUND = true;
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("COMMON_STAGE");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-3"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("Survival");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-4"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("04_BOSSMAP");
         }
     }
 
