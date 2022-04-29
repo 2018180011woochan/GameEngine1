@@ -19,11 +19,6 @@ public class Coin : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         gameObject.transform.Rotate(Vector3.up, Time.deltaTime * 720);

@@ -64,14 +64,12 @@ public class CHARACTER : MonoBehaviour
         }
     }
 
-    
     void OnCollisionEnter(Collision collision)
     {
         //!> 캐릭터와 충돌한 물체의 태그가 Ground일때 점프 갱신
-        if (collision.gameObject.CompareTag("Ground"))
+        if (0.001 < collision.relativeVelocity.y)
         {
             ISGROUND = true;
-            
         }
 
         if (collision.gameObject.CompareTag("Monster"))

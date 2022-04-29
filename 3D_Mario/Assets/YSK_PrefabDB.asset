@@ -16,6 +16,6 @@ MonoBehaviour:
   - prefabName: mushroom
     prefabGameObject: {fileID: 7527315421605387363, guid: 318d7de97700235458e27edae93ab472, type: 3}
   - prefabName: coin
-    prefabGameObject: {fileID: 7527315421605387363, guid: 318d7de97700235458e27edae93ab472, type: 3}
+    prefabGameObject: {fileID: 4883834623839798025, guid: a447067e2ef039e47b8bc894bd04dc4a, type: 3}
   - prefabName: goomba
     prefabGameObject: {fileID: 7527315421605387363, guid: 318d7de97700235458e27edae93ab472, type: 3}

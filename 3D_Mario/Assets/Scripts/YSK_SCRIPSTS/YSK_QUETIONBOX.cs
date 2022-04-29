@@ -35,7 +35,6 @@ public class YSK_QUETIONBOX : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        
     }
 
     void OnHeading()
@@ -46,15 +45,16 @@ public class YSK_QUETIONBOX : MonoBehaviour
         StartCoroutine(GenerateItem());
     }
 
+    GameObject _gened_item;
     IEnumerator GenerateItem()
     {
-        const float animateTime = 1f;
+        _gened_item = PoolingManager.H.Get(includedItemName, transform.position, transform.rotation);
+
+        float animateTime = 1f;
         float animateLength = transform.lossyScale.y;
         float animateSpeedScalar = animateLength / animateTime;
         float animateSpeedperSec = animateSpeedScalar;
 
-        GameObject _gened_item = PoolingManager.H.Get(includedItemName, transform.position, transform.rotation);
-       
         for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
         {
             float animateSpeed = animateSpeedperSec * Time.deltaTime;
