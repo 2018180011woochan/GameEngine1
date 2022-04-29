@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class YSK_QUETIONBOX : MonoBehaviour
 {
     public GameObject emptyBoxPrefab;
-    public GameObject includedItemPrefab;
+    public string includedItemName;
     CHARACTER _mario;
     bool _used = false;
 
@@ -18,7 +18,7 @@ public class YSK_QUETIONBOX : MonoBehaviour
             print("[!] No Mario in this scene");
         }
 
-        if (includedItemPrefab == null)
+        if (includedItemName == null)
         {
             print("[!] Empty quetion box");
         }
@@ -53,8 +53,8 @@ public class YSK_QUETIONBOX : MonoBehaviour
         float animateSpeedScalar = animateLength / animateTime;
         float animateSpeedperSec = animateSpeedScalar;
 
-        GameObject _gened_item = Instantiate(includedItemPrefab, transform.position, transform.rotation, null);
-
+        GameObject _gened_item = PoolingManager.H.Get(includedItemName, transform.position, transform.rotation);
+       
         for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
         {
             float animateSpeed = animateSpeedperSec * Time.deltaTime;
