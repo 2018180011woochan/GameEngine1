@@ -28,7 +28,8 @@ public class YSK_PIPE_HOLE_SCRIPT : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        OnCollidePipeHole();
+        if (other.gameObject.GetComponent<CHARACTER>() == _mario)
+            OnCollidePipeHole();
     }
 
     void OnCollidePipeHole()
