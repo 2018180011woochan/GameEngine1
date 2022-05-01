@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class PoolingManager : BASIC_SINGLETON<PoolingManager>
 {
-    protected ManagedPrefabDataBase prefabDataBase;
+    public ManagedPrefabDataBase prefabDataBase;
 
     private Dictionary<string, GameObject> _prefabDics;
     private Dictionary<string, List<GameObject>> _managedGameObjects;
 
     private void Awake()
     {
-        prefabDataBase = ManagedPrefabDataBase.instance;
        _prefabDics = new Dictionary<string, GameObject>();
         _managedGameObjects = new Dictionary<string, List<GameObject>>();
 
@@ -26,7 +25,10 @@ public class PoolingManager : BASIC_SINGLETON<PoolingManager>
     public GameObject Get(string prefabName, Vector3 position, Quaternion rotation)
     {
         if (!_prefabDics.ContainsKey(prefabName))
+        {
+            print("[" + prefabName + "] is not enable prefabname");
             return null;
+        }
 
         if (!_managedGameObjects.ContainsKey(prefabName))
         {

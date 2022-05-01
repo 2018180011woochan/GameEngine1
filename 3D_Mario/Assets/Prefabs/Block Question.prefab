@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyBoxPrefab: {fileID: 3718973438957183905, guid: 5f12c41318aa7b445b73b01ea692e078, type: 3}
-  includedItemPrefab: {fileID: 7527315421605387363, guid: 318d7de97700235458e27edae93ab472, type: 3}
+  includedItemName: coin

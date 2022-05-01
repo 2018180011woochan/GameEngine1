@@ -16,13 +16,16 @@ public class CHARACTER : MonoBehaviour
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
     float h, v;
+    Vector3 _RespawnPoint;
+
     void Start()
     {
         ANIMATOR = GetComponent<Animator>();
         RIGIDBODY = GetComponent<Rigidbody>();
+        _RespawnPoint = transform.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (ISCONTROLABLE)
         {
@@ -43,7 +46,6 @@ public class CHARACTER : MonoBehaviour
             transform.position += dir * CHARACTER_SPPED * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * CHARACTER_ROTATE);
             ANIMATOR.SetBool("IS_RUN", true);
-
         }
         else
         {
@@ -57,7 +59,7 @@ public class CHARACTER : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
             //!> 위 방향으로 JUMPFORCE만큼 힘을 가함
-            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
@@ -108,12 +110,26 @@ public class CHARACTER : MonoBehaviour
 
 
     // vvv SUNKUE
+    public void SetRespawn(Vector3 respawnPoint)
+    {
+        _RespawnPoint = respawnPoint;
+    }
+    public void Respawn()
+    {
+        print("respawn");
+        transform.position = _RespawnPoint;
+        transform.rotation = Quaternion.identity;
+        ACTIONKEY_ON = false;
+        ISCONTROLABLE = true;
+        ISGROUND = true;
+    }
+
     void ACTION()
     {
         ACTIONKEY_ON = Input.GetKey(KeyCode.LeftControl);
     }
 
-    internal bool GET_ACTIONKEY_ON()
+    public bool GET_ACTIONKEY_ON()
     {
         return ACTIONKEY_ON;
     }
@@ -138,14 +154,14 @@ public class CHARACTER : MonoBehaviour
         RIGIDBODY.freezeRotation = false;
     }
 
-    internal void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
+    public void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
     {
         ReadyPipeAnimate();
         transform.position = pipe.GetHolePositionOutside();
         StartCoroutine(AnimateOnPipeAction(pipe, true));
     }
 
-    internal void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
+    public void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
     {
         ReadyPipeAnimate();
         transform.position = pipe.GetHolePositionInside();

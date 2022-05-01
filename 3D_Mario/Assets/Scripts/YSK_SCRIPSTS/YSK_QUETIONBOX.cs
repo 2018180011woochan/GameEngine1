@@ -26,7 +26,7 @@ public class YSK_QUETIONBOX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!_used && collision.transform.gameObject == _mario.gameObject && collision.transform.position.y < transform.position.y)
+        if (!_used && collision.transform.gameObject == _mario.gameObject && 1 < collision.relativeVelocity.y)
         {
             _used = true;
             OnHeading();
@@ -50,7 +50,7 @@ public class YSK_QUETIONBOX : MonoBehaviour
     {
         _gened_item = PoolingManager.H.Get(includedItemName, transform.position, transform.rotation);
 
-        float animateTime = 1f;
+        float animateTime = 0.5f;
         float animateLength = transform.lossyScale.y;
         float animateSpeedScalar = animateLength / animateTime;
         float animateSpeedperSec = animateSpeedScalar;

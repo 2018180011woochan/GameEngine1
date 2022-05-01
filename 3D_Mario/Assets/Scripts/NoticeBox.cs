@@ -13,24 +13,34 @@ public class NoticeBox : MonoBehaviour
     GameObject _poster;
     GameObject _mario;
     GameObject _maincamera;
+    Vector3 _targetscale;
+    const float _animateScaleRatio = 0.01f;
 
     private void Awake()
     {
-        _poster = GetComponentsInChildren<Transform>(true).Where(m => { print(m.name); return m.name == "Post"; }).First().gameObject;
+        if (!postTexture) print($"no texture to post");
+
+        _poster = GetComponentsInChildren<Transform>(true).Where(m => { return m.name == "Post"; }).First().gameObject;
         _poster.GetComponent<MeshRenderer>().material.mainTexture = postTexture;
         _poster.SetActive(false);
         _mario = FindObjectOfType<CHARACTER>().gameObject;
         _maincamera = GameObject.FindGameObjectsWithTag("MainCamera").First();
+
+        _targetscale = _poster.transform.localScale;
+        _targetscale.x = _poster.transform.localScale.y * postTexture.width / postTexture.height;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!_posting)
+        if (!_posting && collision.transform.gameObject == _mario && 1 < collision.relativeVelocity.y)
         {
             _posting = true;
             _poster.SetActive(true);
             _poster.transform.LookAt(-_maincamera.transform.position);
             _poster.transform.up = Vector3.up;
+            
+            _poster.transform.localScale = _targetscale * _animateScaleRatio;
+            StartCoroutine(PostEffetct());
         }
     }
 
@@ -42,30 +52,29 @@ public class NoticeBox : MonoBehaviour
             if (disableDiff < diff.magnitude)
             {
                 _posting = false;
-                _poster.SetActive(false);
+                StartCoroutine(DisPostEffetct());
             }
         }
     }
 
     IEnumerator PostEffetct()
     {
-        const float animateTime = 0.25f;
-        const float halfanimateTime = animateTime / 2;
-        float animateLength = transform.lossyScale.y * 0.5f;
-        float animateSpeedScalar = animateLength / animateTime * 2;
-        float animateSpeedperSec = animateSpeedScalar;
-        var originpos = gameObject.transform.position;
+        const float animateTime = 0.5f;
         for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
         {
-
-            float animateSpeed = animateSpeedperSec * Time.deltaTime;
-            if (_interval_time < halfanimateTime)
-                gameObject.transform.position = originpos + Vector3.up * Mathf.Lerp(0, animateLength, _interval_time / halfanimateTime);
-            else
-                gameObject.transform.position = originpos + Vector3.up * Mathf.Lerp(animateLength, 0, (_interval_time - halfanimateTime) / halfanimateTime);
+            _poster.transform.localScale = Vector3.Lerp(_poster.transform.localScale, _targetscale, _interval_time / animateTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+    }
 
-        gameObject.SetActive(false);
+    IEnumerator DisPostEffetct()
+    {
+        const float animateTime = 0.5f;
+        for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
+        {
+            _poster.transform.localScale = Vector3.Lerp(_poster.transform.localScale, _targetscale * _animateScaleRatio, _interval_time / animateTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        _poster.SetActive(false);
     }
 }
