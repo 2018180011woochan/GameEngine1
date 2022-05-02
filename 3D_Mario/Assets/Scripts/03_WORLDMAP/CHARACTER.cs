@@ -16,7 +16,9 @@ public class CHARACTER : MonoBehaviour
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
     float h, v;
+
     Vector3 _RespawnPoint;
+    bool _IsSuperJumping = false;
 
     void Start()
     {
@@ -68,10 +70,10 @@ public class CHARACTER : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        //!> 캐릭터와 충돌한 물체의 태그가 Ground일때 점프 갱신
-        if (0.001 < collision.relativeVelocity.y)
+        if (Mathf.Epsilon < collision.relativeVelocity.y)
         {
             ISGROUND = true;
+            _IsSuperJumping = false;
         }
 
         if (collision.gameObject.CompareTag("Monster"))
@@ -114,14 +116,61 @@ public class CHARACTER : MonoBehaviour
     {
         _RespawnPoint = respawnPoint;
     }
+
+    // skill
     public void Respawn()
     {
         print("respawn");
         transform.position = _RespawnPoint;
         transform.rotation = Quaternion.identity;
-        ACTIONKEY_ON = false;
         ISCONTROLABLE = true;
-        ISGROUND = true;
+    }
+
+    bool _IsDashing = false;
+    float _origin_characterspeed;
+    public void Dash()
+    {
+        if (!_IsDashing)
+        {
+            print("Dash");
+            _IsDashing = true;
+            _origin_characterspeed = CHARACTER_SPPED;
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
+    IEnumerator DashCoroutine()
+    {
+        const float boostingtime = 2f;
+        const float prespeedingtime = 1f;
+        float _interval_time = 0f;
+
+
+        for (; _interval_time <= prespeedingtime; _interval_time += Time.deltaTime)
+        {
+            CHARACTER_SPPED = Mathf.Lerp(CHARACTER_SPPED, _origin_characterspeed * 3.4f, Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        for (; _interval_time <= boostingtime; _interval_time += Time.deltaTime)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        CHARACTER_SPPED = _origin_characterspeed;
+        _IsDashing = false;
+    }
+
+    public void SuperJump()
+    {
+        if (!_IsSuperJumping)
+        {
+            print("SuperJump");
+            _IsSuperJumping = true;
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE * 2);
+            ANIMATOR.SetTrigger("JUMP");
+            ISGROUND = false;
+        }
     }
 
     void ACTION()
@@ -167,6 +216,8 @@ public class CHARACTER : MonoBehaviour
         transform.position = pipe.GetHolePositionInside();
         StartCoroutine(AnimateOnPipeAction(pipe, false));
     }
+
+
 
     IEnumerator AnimateOnPipeAction(YSK_PIPE_HOLE_SCRIPT pipe, bool enter)
     {

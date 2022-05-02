@@ -22,12 +22,11 @@ public class BulletCannon : MonoBehaviour
             // bullet น฿ป็
             if (dir == DIR.LEFT)
             {
-                GameObject instantBullet = Instantiate(bullet, bulletPos.position, bulletPos.rotation);
+                GameObject instantBullet = Instantiate(bullet, bulletPos.position, bulletPos.rotation, transform);
             }
-
             else if (dir == DIR.RIGHT)
             {
-                GameObject instantBullet = Instantiate(bullet, bulletPos.position, Quaternion.Euler(0f, -90f, 0f));
+                GameObject instantBullet = Instantiate(bullet, bulletPos.position, Quaternion.Euler(0f, -90f, 0f), transform);
             }
 
             yield return new WaitForSeconds(5f);

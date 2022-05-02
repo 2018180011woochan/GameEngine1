@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6045506887979966086}
   - component: {fileID: 3139230041698638900}
   - component: {fileID: 1518398934269771309}
+  - component: {fileID: 4849883954012497454}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -46,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.2199006, z: 1}
-  m_Center: {x: 0, y: 7.8454046, z: 0}
+  m_Size: {x: 1.8234367, y: 2.8729706, z: 1}
+  m_Center: {x: -0.41171837, y: 7.5188694, z: 0}
 --- !u!65 &1518398934269771309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61,6 +62,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8182421, y: 1.4702246, z: 1.6777879}
   m_Center: {x: 0.016357541, y: 0.75582135, z: -0.021718562}
+--- !u!114 &4849883954012497454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045506887979966085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0258e58d4fb45a34eb650328b6a61ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &961836942761012784
 PrefabInstance:
   m_ObjectHideFlags: 0

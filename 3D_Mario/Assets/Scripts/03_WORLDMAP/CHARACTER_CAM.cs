@@ -11,9 +11,9 @@ public class CHARACTER_CAM : MonoBehaviour
     public float CameraZ = -35f;
     public float CameraSpeed = 1.0f;
     Vector3 CAMERA_POSITION;
-    void Start()
+    void Awake()
     {
-        
+        transform.position = Player.transform.position + new Vector3(CameraX, CameraY, CameraZ);
     }
 
 
