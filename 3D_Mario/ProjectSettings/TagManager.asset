@@ -9,6 +9,8 @@ TagManager:
   - Goomba
   - Brick
   - Bullet
+  - Boss
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
+  - Boss
+  - BossBullet
   - 
   - 
   - 
