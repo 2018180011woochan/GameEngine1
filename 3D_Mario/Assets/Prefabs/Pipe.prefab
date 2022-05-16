@@ -70,6 +70,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: fd90ae6de34461748b454dfb416c746e, type: 3}
+      propertyPath: m_TagString
+      value: IgnoreCameraCollide
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd90ae6de34461748b454dfb416c746e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Question
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
+      propertyPath: m_TagString
+      value: IgnoreCameraCollide
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c4e24925d151a244adfd53a84c30135, type: 3}
       propertyPath: m_RootOrder
       value: 0

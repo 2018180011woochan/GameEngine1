@@ -39,7 +39,6 @@ public class YSK_QUETIONBOX : MonoBehaviour
 
     void OnHeading()
     {
-        //GetComponentsInChildren<GameObject>().ForEach(name => { name.SetActive(false); });
         foreach (var i in GetComponentsInChildren<SkinnedMeshRenderer>()) i.enabled = false;
         Instantiate(emptyBoxPrefab, transform.position, transform.rotation, null);
         StartCoroutine(GenerateItem());
