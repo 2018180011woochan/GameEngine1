@@ -19,7 +19,7 @@ public class BossBullet : MonoBehaviour
     {
         if (!isMelee && other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

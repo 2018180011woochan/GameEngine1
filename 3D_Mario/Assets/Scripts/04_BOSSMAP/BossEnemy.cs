@@ -10,8 +10,12 @@ public class BossEnemy : MonoBehaviour
     public int curHealth;
     public Transform target;
     public BoxCollider meleeArea;
+    public GameObject bullet;
     public bool isChase;
     public bool isAttack;
+    public GameObject _dust;
+    
+    private Vector3 MoveDir = new Vector3(0,0,0);
     
     private Rigidbody rigid;
     private BoxCollider boxCollider;
@@ -22,7 +26,7 @@ public class BossEnemy : MonoBehaviour
     private Vector3 lookVec;
     private Vector3 tauntVec;
     public bool isLook;
-    
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -31,6 +35,7 @@ public class BossEnemy : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
+        nav.isStopped = true;
         Invoke("ChaseStart", 0.1f);
         StartCoroutine(Think());
         isLook = true;
@@ -39,6 +44,7 @@ public class BossEnemy : MonoBehaviour
     void ChaseStart()
     {
         isChase = true;
+
         anim.SetBool("isWalk", true);
     }
 
@@ -59,7 +65,7 @@ public class BossEnemy : MonoBehaviour
         // {
         //     isChase = false;
         // }
-        //
+        
        if (nav.enabled)
        {
            nav.SetDestination(target.position);
@@ -110,7 +116,7 @@ public class BossEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         meleeArea.enabled = true;
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         meleeArea.enabled = false;
 
         isChase = true;
@@ -130,11 +136,11 @@ public class BossEnemy : MonoBehaviour
             case 0:
             case 1:
                 // 플레이어 쫓아가는 패턴
-                //StartCoroutine(ChasePlayer());
-                //break;
+                StartCoroutine(ChasePlayer());
+                break;
             case 2:
-                // 점프공격 패턴
-                StartCoroutine(Taunt());
+                // 돌격공격 패턴
+                StartCoroutine(Dash());
                 break;
             case 3:
                 // 돌굴러가는 패턴
@@ -149,37 +155,39 @@ public class BossEnemy : MonoBehaviour
 
     IEnumerator ChasePlayer()
     {
-        Debug.Log("chase player");
-        //Invoke("ChaseStart", 2);
-        
+        Debug.Log("chaseplayer");
         isChase = true;
-        anim.SetBool("isWalk", true);
+        yield return new WaitForSeconds(3f);
         
-        if (nav.enabled)
-        {
-            nav.SetDestination(target.position);
-            nav.isStopped = !isChase;
-        }
-        
-        yield return new WaitForSeconds(1f);
         StartCoroutine(Think());
     }
-    
+
     IEnumerator RockShot()
     {
         Debug.Log("rockshot");
-
+        isChase = false;
         anim.SetTrigger("doRock");
+
+        Instantiate(bullet, transform.position, transform.rotation);
+        
         yield return new WaitForSeconds(3f);
+        isChase = true;
         StartCoroutine(Think());
     }
     
-    IEnumerator Taunt()
+    IEnumerator Dash()
     {
-        Debug.Log("jump");
-
-        anim.SetTrigger("doJump");
+        anim.SetBool("isDash", true);
+        Debug.Log("Dash");
+        yield return new WaitForSeconds(1f);
+        _dust.transform.position = transform.position;
+        _dust.SetActive(true);
+        nav.speed = 70f;
         yield return new WaitForSeconds(3f);
+        _dust.SetActive(false);
+        anim.SetBool("isDash", false);
+        nav.speed = 7f;
+
         StartCoroutine(Think());
     }
     
@@ -195,6 +203,10 @@ public class BossEnemy : MonoBehaviour
     {
         Targerting();
         FreezeVelocity();
+        
+        MoveDir = target.transform.position - transform.position;
+        transform.rotation =
+            Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(MoveDir), Time.deltaTime * 5);
     }
     
     private void OnTriggerEnter(Collider other)
