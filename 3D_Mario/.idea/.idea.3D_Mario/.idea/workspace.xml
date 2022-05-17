@@ -11,7 +11,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/BrickCollision.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -67,6 +66,7 @@
       <updated>1650352501625</updated>
       <workItem from="1650352502212" duration="5543000" />
       <workItem from="1650444360388" duration="1713000" />
+      <workItem from="1652759692593" duration="642000" />
     </task>
     <servers />
   </component>
