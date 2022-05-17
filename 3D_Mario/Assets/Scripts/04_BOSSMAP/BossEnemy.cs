@@ -11,6 +11,7 @@ public class BossEnemy : MonoBehaviour
     public Transform target;
     public BoxCollider meleeArea;
     public GameObject bullet;
+    public GameObject NiddleBall;
     public bool isChase;
     public bool isAttack;
     public GameObject _dust;
@@ -167,7 +168,7 @@ public class BossEnemy : MonoBehaviour
         Debug.Log("rockshot");
         isChase = false;
         anim.SetTrigger("doRock");
-
+        
         Instantiate(bullet, transform.position, transform.rotation);
         
         yield return new WaitForSeconds(3f);
@@ -194,8 +195,13 @@ public class BossEnemy : MonoBehaviour
     IEnumerator FireMissile()
     {
         Debug.Log("FireMissile");
+        isChase = false;
+        anim.SetTrigger("doFire");
+        
+        Instantiate(NiddleBall, transform.position, transform.rotation);
 
         yield return new WaitForSeconds(3f);
+ 
         StartCoroutine(Think());
     }
     

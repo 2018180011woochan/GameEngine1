@@ -13063,7 +13063,8 @@ MonoBehaviour:
   curHealth: 100
   target: {fileID: 72577352}
   meleeArea: {fileID: 1325116692}
-  bullet: {fileID: 5679318690977163534, guid: 9472daad6b3f96b42adee6509be8e0c8, type: 3}
+  bullet: {fileID: 2973373411298072523, guid: c2353c225908b53439f01a39a3564aca, type: 3}
+  NiddleBall: {fileID: 3969359400816698776, guid: 56364893b2e13a74697ab2b276322819, type: 3}
   isChase: 0
   isAttack: 0
   _dust: {fileID: 191482275}
