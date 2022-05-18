@@ -184,7 +184,7 @@ public class CHARACTER : MonoBehaviour
     }
 
 
-    void ReadyPipeAnimate()
+    public void ReadyAnimate()
     {
         ACTIONKEY_ON = false;
         ISCONTROLABLE = false;
@@ -195,7 +195,7 @@ public class CHARACTER : MonoBehaviour
         ANIMATOR.SetBool("IS_RUN", false);
     }
 
-    void FinishPipeAnimate()
+    public void FinishAnimate()
     {
         ISCONTROLABLE = true;
         RIGIDBODY.detectCollisions = true;
@@ -205,14 +205,14 @@ public class CHARACTER : MonoBehaviour
 
     public void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyPipeAnimate();
+        ReadyAnimate();
         transform.position = pipe.GetHolePositionOutside();
         StartCoroutine(AnimateOnPipeAction(pipe, true));
     }
 
     public void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyPipeAnimate();
+        ReadyAnimate();
         transform.position = pipe.GetHolePositionInside();
         StartCoroutine(AnimateOnPipeAction(pipe, false));
     }
@@ -247,7 +247,7 @@ public class CHARACTER : MonoBehaviour
         }
         else
         {
-            FinishPipeAnimate();
+            FinishAnimate();
         }
     }
     // ^^^ SUNKUE
