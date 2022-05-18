@@ -16,6 +16,8 @@ public class Roller : MonoBehaviour
     void FixedUpdate()
     {
 		transform.Translate(direction * Time.deltaTime, Space.World);
+		var axis = new Vector3(direction.z, 0, 0);
+		transform.Rotate(axis * Time.deltaTime * 100f);
     }
 
 	void OnCollisionEnter(Collision collision)
