@@ -103,6 +103,11 @@ public class CHARACTER : MonoBehaviour
         else if (other.gameObject.CompareTag("WORLD1-4"))
         {
             WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("YSK_WORLD1");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-5"))
+        {
+            WORLDMAP_UI.H.FadeStart();
             LOAD_MNG.LoadScene("04_BOSSMAP");
         }
     }
