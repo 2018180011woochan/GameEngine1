@@ -5,8 +5,11 @@ using UnityEngine;
 public class BoomerangBro : MonoBehaviour
 {
     public GameObject target;
+    public Transform BommerangPos;
+    public GameObject boomerang;
 
     bool isAttack = false;
+    bool isThrow = false;
 
     Rigidbody rigid;
     Animator anim;
@@ -43,50 +46,6 @@ public class BoomerangBro : MonoBehaviour
 
     }
 
-    //IEnumerator Attack()
-    //{
-    //    //yield return new WaitForSeconds(2f);
-
-
-    //    anim.SetBool("isWait", false);
-    //    anim.SetBool("isSign", true);
-
-    //    yield return new WaitForSeconds(0.867f);
-
-    //    anim.SetBool("isSign", false);
-    //    anim.SetBool("isAttack", true);
-    //    yield return new WaitForSeconds(0.833f);
-
-    //    anim.SetBool("isAttack", false);
-    //    anim.SetBool("isWait", true);
-    //    anim.SetBool("isSign", false);
-
-    //    yield return new WaitForSeconds(3f);    // wait중
-
-    //    StartCoroutine(Attack());
-
-    //    //// wait중임, 5초동안
-    //    //yield return new WaitForSeconds(5f);
-    //    //anim.SetBool("isWait", false);  // wait 끝남
-    //    //anim.SetBool("isSign", true);   // sign 시작
-
-    //    //// sign중임, 2초동안
-    //    //yield return new WaitForSeconds(0.7f);
-    //    //anim.SetBool("isSign", false);  // sign 끝남
-    //    //anim.SetBool("isAttack", true);  // attack 시작
-    //    //isAttack = true;
-
-    //    //// attack중임, 1.5초동안
-    //    //yield return new WaitForSeconds(1f);
-    //    //anim.SetBool("isAttack", false);   // attack 끝남
-    //    //anim.SetBool("isWait", true);   // wait 시작
-    //    //isAttack = false;
-    //    //while (true)
-    //    //{
-
-    //    //}
-    //}
-
     void Attack()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
@@ -95,6 +54,7 @@ public class BoomerangBro : MonoBehaviour
             {
                 anim.SetBool("isWait", false);
                 anim.SetBool("isSign", true);
+                isThrow = false;
                 //Debug.Log("Wait");
             }
 
@@ -106,6 +66,14 @@ public class BoomerangBro : MonoBehaviour
 
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
+                if (!isThrow)
+                {
+                    GameObject instantBoomerang = 
+                        Instantiate(boomerang, BommerangPos.position, BommerangPos.rotation);
+
+                    isThrow = true;
+                }
+
                 anim.SetBool("isAttack", false);
                 anim.SetBool("isWait", true);
             }
