@@ -62,18 +62,17 @@ public class BoomerangBro : MonoBehaviour
             {
                 anim.SetBool("isSign", false);
                 anim.SetBool("isAttack", true);
+
+                if (!isThrow)
+                {
+                    GameObject instantBoomerang =
+                        Instantiate(boomerang, BommerangPos.position, BommerangPos.rotation);
+                    isThrow = true;
+                }
             }
 
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
-                if (!isThrow)
-                {
-                    GameObject instantBoomerang = 
-                        Instantiate(boomerang, BommerangPos.position, BommerangPos.rotation);
-
-                    isThrow = true;
-                }
-
                 anim.SetBool("isAttack", false);
                 anim.SetBool("isWait", true);
             }
