@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/00_LOAD.unity
     guid: acd421fcca1428341a26aabffb0fa061
+  - enabled: 1
+    path: Assets/Scenes/Survival.unity
+    guid: 78bdad4764dc1064ab3dbf6b2e6fe9ec
+  - enabled: 1
+    path: Assets/Scenes/COMMON_STAGE.unity
+    guid: 3e36584d34a979e4b859f1a2e0242b7c
+  - enabled: 1
+    path: Assets/Scenes/04_BOSSMAP.unity
+    guid: db0590348c2c7ec408e0cb416d98a8da
   m_configObjects: {}

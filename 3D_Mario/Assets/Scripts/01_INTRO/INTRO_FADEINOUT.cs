@@ -28,7 +28,6 @@ public class INTRO_FADEINOUT : MonoBehaviour
                 StartCoroutine(ChangeScene());
             }
         }
-
     }
     IEnumerator IntroCount()
     {
@@ -50,6 +49,5 @@ public class INTRO_FADEINOUT : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         LOAD_MNG.LoadScene("02_WORLDMAP");
-        //SceneManager.LoadScene("02_WORLDMAP");
     }
 }

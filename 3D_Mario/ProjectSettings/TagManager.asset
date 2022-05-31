@@ -9,9 +9,10 @@ TagManager:
   - Goomba
   - Brick
   - Bullet
-  - Boss
-  - BossBullet
-  - BossKoopa
+  - ground
+  - WORLD1-2
+  - WORLD1-3
+  - WORLD1-4
   layers:
   - Default
   - TransparentFX
@@ -20,9 +21,9 @@ TagManager:
   - Water
   - UI
   - Player
-  - Boss
-  - BossBullet
-  - BossKoopa
+  - 
+  - 
+  - 
   - 
   - 
   - 

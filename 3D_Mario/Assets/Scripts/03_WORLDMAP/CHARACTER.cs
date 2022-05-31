@@ -9,6 +9,8 @@ public class CHARACTER : MonoBehaviour
     public float CHARACTER_SPPED = 12.0f;
     float CHARACTER_ROTATE = 10.0f;
     public float JUMPFORCE = 120.0f;
+    private bool ACTIONKEY_ON = false;
+    private bool ISCONTROLABLE = true;
     public bool ISGROUND = true;
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
@@ -21,9 +23,12 @@ public class CHARACTER : MonoBehaviour
 
     void FixedUpdate()
     {
-        MOVE();
-        JUMP();
-
+        if (ISCONTROLABLE)
+        {
+            MOVE();
+            JUMP();
+            ACTION();
+        }
     }
     void MOVE()
     {
@@ -82,4 +87,102 @@ public class CHARACTER : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("WORLD1-2"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("COMMON_STAGE");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-3"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("Survival");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-4"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+            LOAD_MNG.LoadScene("04_BOSSMAP");
+        }
+    }
+
+
+    // vvv SUNKUE
+    void ACTION()
+    {
+        ACTIONKEY_ON = Input.GetKey(KeyCode.LeftControl);
+    }
+
+    internal bool GET_ACTIONKEY_ON()
+    {
+        return ACTIONKEY_ON;
+    }
+
+
+    void ReadyPipeAnimate()
+    {
+        ACTIONKEY_ON = false;
+        ISCONTROLABLE = false;
+        RIGIDBODY.detectCollisions = false;
+        RIGIDBODY.useGravity = false;
+        RIGIDBODY.freezeRotation = true;
+        RIGIDBODY.velocity = Vector3.zero;
+        ANIMATOR.SetBool("IS_RUN", false);
+    }
+
+    void FinishPipeAnimate()
+    {
+        ISCONTROLABLE = true;
+        RIGIDBODY.detectCollisions = true;
+        RIGIDBODY.useGravity = true;
+        RIGIDBODY.freezeRotation = false;
+    }
+
+    internal void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
+    {
+        ReadyPipeAnimate();
+        transform.position = pipe.GetHolePositionOutside();
+        StartCoroutine(AnimateOnPipeAction(pipe, true));
+    }
+
+    internal void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
+    {
+        ReadyPipeAnimate();
+        transform.position = pipe.GetHolePositionInside();
+        StartCoroutine(AnimateOnPipeAction(pipe, false));
+    }
+
+    IEnumerator AnimateOnPipeAction(YSK_PIPE_HOLE_SCRIPT pipe, bool enter)
+    {
+        const float animateTime = 1f;
+        const float animateLength = 3f;
+        const float animateSpeedScalar = animateLength / animateTime;
+
+        float animateSpeedperSec = animateSpeedScalar;
+
+        if (enter)
+        {
+            animateSpeedperSec *= -1;
+        }
+
+        var localUp = pipe.transform.up;
+
+        for (float _interval_time = 0f; _interval_time <= animateTime; _interval_time += Time.deltaTime)
+        {
+            float animateSpeed = animateSpeedperSec * Time.deltaTime;
+            transform.position += localUp * animateSpeed;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        if (enter)
+        {
+            pipe.PassedOut();
+        }
+        else
+        {
+            FinishPipeAnimate();
+        }
+    }
+    // ^^^ SUNKUE
 }
