@@ -141,12 +141,12 @@ public class BossEnemy : MonoBehaviour
                 break;
             case 2:
                 // 돌격공격 패턴
-                StartCoroutine(Dash());
-                break;
+                //StartCoroutine(Dash());
+                //break;
             case 3:
                 // 돌굴러가는 패턴
-                StartCoroutine(RockShot());
-                break;
+                //StartCoroutine(RockShot());
+                //break;
             case 4:
                 // 미사일쏘는 패턴
                 StartCoroutine(FireMissile());
