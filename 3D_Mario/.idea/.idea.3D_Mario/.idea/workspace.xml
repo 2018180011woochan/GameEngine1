@@ -12,6 +12,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Roller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/MarioCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/MarioLifeCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/BrickCollision.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -71,7 +73,8 @@
       <workItem from="1652763453804" duration="366000" />
       <workItem from="1652763865184" duration="784000" />
       <workItem from="1652764727023" duration="37000" />
-      <workItem from="1652878699800" duration="2101000" />
+      <workItem from="1652878699800" duration="2882000" />
+      <workItem from="1654090568279" duration="3145000" />
     </task>
     <servers />
   </component>

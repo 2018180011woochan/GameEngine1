@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
 
     void FixedUpdate()
     {
-        time -= Time.deltaTime;
+        time -= Time.fixedDeltaTime;
         text.text = ((int)time).ToString();
     }
 }
