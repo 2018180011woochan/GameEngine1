@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Question Long
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e594e915319ff14d882744e33527667, type: 3}
+      propertyPath: m_TagString
+      value: IgnoreCameraCollide
+      objectReference: {fileID: 0}
     - target: {fileID: 4272258606253070081, guid: 8e594e915319ff14d882744e33527667, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

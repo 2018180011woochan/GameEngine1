@@ -12,16 +12,22 @@ public class CHARACTER : MonoBehaviour
     private bool ACTIONKEY_ON = false;
     private bool ISCONTROLABLE = true;
     public bool ISGROUND = true;
+    public int coin = 0;
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
     float h, v;
+
+    Vector3 _RespawnPoint;
+    bool _IsSuperJumping = false;
+
     void Start()
     {
         ANIMATOR = GetComponent<Animator>();
         RIGIDBODY = GetComponent<Rigidbody>();
+        _RespawnPoint = transform.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (ISCONTROLABLE)
         {
@@ -42,7 +48,6 @@ public class CHARACTER : MonoBehaviour
             transform.position += dir * CHARACTER_SPPED * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * CHARACTER_ROTATE);
             ANIMATOR.SetBool("IS_RUN", true);
-
         }
         else
         {
@@ -52,25 +57,23 @@ public class CHARACTER : MonoBehaviour
 
     void JUMP()
     {
-        //!> Áß·Â °¡¼Óµµ -9.81 -> -40À¸·Î ¼öÁ¤. Edit - ProjectSetting - Physics
+        //!> ï¿½ß·ï¿½ ï¿½ï¿½ï¿½Óµï¿½ -9.81 -> -40ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. Edit - ProjectSetting - Physics
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
-            //!> À§ ¹æÇâÀ¸·Î JUMPFORCE¸¸Å­ ÈûÀ» °¡ÇÔ
-            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
+            //!> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JUMPFORCEï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
         }
     }
 
-    
     void OnCollisionEnter(Collision collision)
     {
-        //!> Ä³¸¯ÅÍ¿Í Ãæµ¹ÇÑ ¹°Ã¼ÀÇ ÅÂ±×°¡ GroundÀÏ¶§ Á¡ÇÁ °»½Å
-        if (collision.gameObject.CompareTag("Ground"))
+        if (Mathf.Epsilon < collision.relativeVelocity.y)
         {
             ISGROUND = true;
-            
+            _IsSuperJumping = false;
         }
 
         if (collision.gameObject.CompareTag("Monster"))
@@ -79,7 +82,7 @@ public class CHARACTER : MonoBehaviour
             {
                 DATA_MNG.H.CHARACTER_HP = 1;
                 DATA_MNG.H.CHARACTER_LIFE -= 1;
-                // ÀÌÈÄ °ÔÀÓ¿À¹ö Á¦ÀÛ
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
             else
             {
@@ -109,18 +112,79 @@ public class CHARACTER : MonoBehaviour
 
 
     // vvv SUNKUE
+    public void SetRespawn(Vector3 respawnPoint)
+    {
+        _RespawnPoint = respawnPoint;
+    }
+
+    // skill
+    public void Respawn()
+    {
+        print("respawn");
+        transform.position = _RespawnPoint;
+        transform.rotation = Quaternion.identity;
+        ISCONTROLABLE = true;
+    }
+
+    bool _IsDashing = false;
+    float _origin_characterspeed;
+    public void Dash()
+    {
+        if (!_IsDashing)
+        {
+            print("Dash");
+            _IsDashing = true;
+            _origin_characterspeed = CHARACTER_SPPED;
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
+    IEnumerator DashCoroutine()
+    {
+        const float boostingtime = 2f;
+        const float prespeedingtime = 1f;
+        float _interval_time = 0f;
+
+
+        for (; _interval_time <= prespeedingtime; _interval_time += Time.deltaTime)
+        {
+            CHARACTER_SPPED = Mathf.Lerp(CHARACTER_SPPED, _origin_characterspeed * 3.4f, Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        for (; _interval_time <= boostingtime; _interval_time += Time.deltaTime)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        CHARACTER_SPPED = _origin_characterspeed;
+        _IsDashing = false;
+    }
+
+    public void SuperJump()
+    {
+        if (!_IsSuperJumping)
+        {
+            print("SuperJump");
+            _IsSuperJumping = true;
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE * 2);
+            ANIMATOR.SetTrigger("JUMP");
+            ISGROUND = false;
+        }
+    }
+
     void ACTION()
     {
         ACTIONKEY_ON = Input.GetKey(KeyCode.LeftControl);
     }
 
-    internal bool GET_ACTIONKEY_ON()
+    public bool GET_ACTIONKEY_ON()
     {
         return ACTIONKEY_ON;
     }
 
 
-    void ReadyPipeAnimate()
+    public void ReadyAnimate()
     {
         ACTIONKEY_ON = false;
         ISCONTROLABLE = false;
@@ -131,7 +195,7 @@ public class CHARACTER : MonoBehaviour
         ANIMATOR.SetBool("IS_RUN", false);
     }
 
-    void FinishPipeAnimate()
+    public void FinishAnimate()
     {
         ISCONTROLABLE = true;
         RIGIDBODY.detectCollisions = true;
@@ -139,19 +203,21 @@ public class CHARACTER : MonoBehaviour
         RIGIDBODY.freezeRotation = false;
     }
 
-    internal void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
+    public void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyPipeAnimate();
+        ReadyAnimate();
         transform.position = pipe.GetHolePositionOutside();
         StartCoroutine(AnimateOnPipeAction(pipe, true));
     }
 
-    internal void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
+    public void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyPipeAnimate();
+        ReadyAnimate();
         transform.position = pipe.GetHolePositionInside();
         StartCoroutine(AnimateOnPipeAction(pipe, false));
     }
+
+
 
     IEnumerator AnimateOnPipeAction(YSK_PIPE_HOLE_SCRIPT pipe, bool enter)
     {
@@ -181,7 +247,7 @@ public class CHARACTER : MonoBehaviour
         }
         else
         {
-            FinishPipeAnimate();
+            FinishAnimate();
         }
     }
     // ^^^ SUNKUE
