@@ -52,10 +52,10 @@ public class CHARACTER : MonoBehaviour
 
     void JUMP()
     {
-        //!> Áß·Â °¡¼Óµµ -9.81 -> -40À¸·Î ¼öÁ¤. Edit - ProjectSetting - Physics
+        //!> ï¿½ß·ï¿½ ï¿½ï¿½ï¿½Óµï¿½ -9.81 -> -40ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. Edit - ProjectSetting - Physics
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
-            //!> À§ ¹æÇâÀ¸·Î JUMPFORCE¸¸Å­ ÈûÀ» °¡ÇÔ
+            //!> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JUMPFORCEï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
@@ -66,20 +66,26 @@ public class CHARACTER : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
-        //!> Ä³¸¯ÅÍ¿Í Ãæµ¹ÇÑ ¹°Ã¼ÀÇ ÅÂ±×°¡ GroundÀÏ¶§ Á¡ÇÁ °»½Å
+        //!> Ä³ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Â±×°ï¿½ Groundï¿½Ï¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (collision.gameObject.CompareTag("Ground"))
         {
             ISGROUND = true;
             
         }
 
+        if (collision.gameObject.CompareTag("JumpBooster"))
+        {
+            RIGIDBODY.AddForce(Mario.transform.up * 1500.0f);
+            _Dust._Particle.Stop();
+        }
+        
         if (collision.gameObject.CompareTag("Monster"))
         {
             if (DATA_MNG.H.CHARACTER_HP == 0)
             {
                 DATA_MNG.H.CHARACTER_HP = 1;
                 DATA_MNG.H.CHARACTER_LIFE -= 1;
-                // ÀÌÈÄ °ÔÀÓ¿À¹ö Á¦ÀÛ
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
             else
             {
