@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - prefabName: coin
     prefabGameObject: {fileID: 4883834623839798025, guid: a447067e2ef039e47b8bc894bd04dc4a, type: 3}
-  - prefabName: jump_item
+  - prefabName: mushroom
     prefabGameObject: {fileID: 2731662416597584266, guid: 42b12a0233c0658448a0ed8d016c3cd1, type: 3}
   - prefabName: dash_item
     prefabGameObject: {fileID: 7304310727156204607, guid: d6ac4b3785407b64db3539ae1b350df9, type: 3}
