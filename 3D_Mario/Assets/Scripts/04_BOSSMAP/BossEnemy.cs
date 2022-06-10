@@ -225,6 +225,14 @@ public class BossEnemy : MonoBehaviour
         }
 
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            anim.SetTrigger("doDamaged");
+        }
+    }
 
     IEnumerator OnDamage(Vector3 reactVec)
     {

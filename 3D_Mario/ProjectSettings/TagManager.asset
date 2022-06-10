@@ -16,6 +16,7 @@ TagManager:
   - BossBullet
   - Boss
   - JumpBooster
+  - BossHead
   layers:
   - Default
   - TransparentFX
