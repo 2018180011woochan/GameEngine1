@@ -12,7 +12,6 @@ public class CHARACTER : MonoBehaviour
     private bool ACTIONKEY_ON = false;
     private bool ISCONTROLABLE = true;
     public bool ISGROUND = true;
-    public int coin = 0;
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
     float h, v;
