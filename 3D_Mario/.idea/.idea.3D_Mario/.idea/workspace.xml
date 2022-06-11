@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossHead.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossHead.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP/BoBomb_AniContr.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP/BoBomb_AniContr.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BobBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BobBomb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +104,8 @@
       <workItem from="1654821605723" duration="7732000" />
       <workItem from="1654871261341" duration="2929000" />
       <workItem from="1654936664035" duration="2660000" />
-      <workItem from="1654940386810" duration="2802000" />
+      <workItem from="1654940386810" duration="3073000" />
+      <workItem from="1654954283982" duration="2379000" />
     </task>
     <servers />
   </component>

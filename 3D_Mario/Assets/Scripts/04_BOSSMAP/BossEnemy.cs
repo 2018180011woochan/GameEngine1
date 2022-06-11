@@ -10,6 +10,7 @@ public class BossEnemy : MonoBehaviour
     public int curHealth;
     public Transform target;
     public BoxCollider meleeArea;
+    public BoxCollider Head;
     public GameObject bullet;
     public GameObject NiddleBall;
     public bool isChase;
@@ -34,6 +35,7 @@ public class BossEnemy : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        Head = GetComponent<BoxCollider>();
 
         nav.isStopped = true;
         Invoke("ChaseStart", 0.1f);
@@ -59,7 +61,7 @@ public class BossEnemy : MonoBehaviour
             lookVec = new Vector3(h, 0, v) * 5f;
         }
 
-        if (nav.enabled)
+        if (nav.enabled && !isDamaged)
        {
            nav.SetDestination(target.position);
            nav.isStopped = !isChase;
@@ -228,13 +230,17 @@ public class BossEnemy : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (target.transform.position.y > 3)
         {
-            anim.SetTrigger("doDamaged");
-            Vector3 reactVec = transform.position - collision.transform.position;
-            StartCoroutine(OnDamage(reactVec));
+            if (collision.gameObject.tag == "Player")
+            {
+                Debug.Log("ok");
+                anim.SetTrigger("doDamaged");
+                Vector3 reactVec = transform.position - collision.transform.position;
+                StartCoroutine(OnDamage(reactVec));
+            }
         }
-        
+
         if (collision.gameObject.tag == "bomb")
         {
             Debug.Log("으악");

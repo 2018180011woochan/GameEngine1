@@ -50,7 +50,8 @@ public class BobBomb : MonoBehaviour
             }
             else
             {
-                StartCoroutine(Down());
+                if (target.transform.position.y > 1)
+                    StartCoroutine(Down());
             }
             
         }

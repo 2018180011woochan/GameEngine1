@@ -17,6 +17,9 @@ TagManager:
   - Boss
   - JumpBooster
   - BossHead
+  - BossKoopa
+  - Bobomb
+  - bomb
   layers:
   - Default
   - TransparentFX
