@@ -20,7 +20,6 @@ public class BossEnemy : MonoBehaviour
     
     private Rigidbody rigid;
     private BoxCollider boxCollider;
-    //private MeshRenderer meshs;
     private NavMeshAgent nav;
     private Animator anim;
 
@@ -33,7 +32,6 @@ public class BossEnemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        //meshs = GetComponentInChildren<MeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
@@ -61,16 +59,7 @@ public class BossEnemy : MonoBehaviour
             lookVec = new Vector3(h, 0, v) * 5f;
         }
 
-        // if (anim.GetBool("isWalk"))
-        // {
-        //     isChase = true;
-        // }
-        // else
-        // {
-        //     isChase = false;
-        // }
-        
-       if (nav.enabled)
+        if (nav.enabled)
        {
            nav.SetDestination(target.position);
            nav.isStopped = !isChase;
@@ -115,7 +104,6 @@ public class BossEnemy : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         meleeArea.enabled = false;
-
         
         yield return new WaitForSeconds(0.2f);
         meleeArea.enabled = true;
@@ -131,7 +119,6 @@ public class BossEnemy : MonoBehaviour
     
     IEnumerator Think()
     {
-
         yield return new WaitForSeconds(0.1f);
 
         int ranAction = UnityEngine.Random.Range(0, 5);

@@ -7,11 +7,19 @@
     <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP/Boss_AniContr.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP/Boss_AniContr.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BOSS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BOSS.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossHead.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossHead.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossKoopa.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossKoopa.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossSceneManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +102,7 @@
       <workItem from="1654029353855" duration="1279000" />
       <workItem from="1654821605723" duration="7732000" />
       <workItem from="1654871261341" duration="2929000" />
-      <workItem from="1654936664035" duration="1064000" />
+      <workItem from="1654936664035" duration="2660000" />
     </task>
     <servers />
   </component>

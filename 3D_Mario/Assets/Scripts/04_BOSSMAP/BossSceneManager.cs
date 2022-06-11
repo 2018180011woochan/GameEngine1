@@ -6,8 +6,6 @@ using UnityEngine;
 public class BossSceneManager : MonoBehaviour
 {
     public BossEnemy Boss;
-    public GameObject GamePanel;
-    public RectTransform BossHealthGroup;
     public RectTransform BossHealthBar;
 
     private void LateUpdate()
