@@ -27,6 +27,7 @@ public class BossEnemy : MonoBehaviour
     private Vector3 lookVec;
     private Vector3 tauntVec;
     public bool isLook;
+    private bool isDamaged;
 
     private void Awake()
     {
@@ -40,6 +41,8 @@ public class BossEnemy : MonoBehaviour
         Invoke("ChaseStart", 0.1f);
         StartCoroutine(Think());
         isLook = true;
+        maxHealth = 1000;
+        curHealth = 1000;
     }
 
     void ChaseStart()
@@ -128,6 +131,7 @@ public class BossEnemy : MonoBehaviour
     
     IEnumerator Think()
     {
+
         yield return new WaitForSeconds(0.1f);
 
         int ranAction = UnityEngine.Random.Range(0, 5);
@@ -165,9 +169,12 @@ public class BossEnemy : MonoBehaviour
 
     IEnumerator RockShot()
     {
+        if (!isDamaged)
+        {
+            anim.SetTrigger("doRock");
+        }
         Debug.Log("rockshot");
         isChase = false;
-        anim.SetTrigger("doRock");
         
         Instantiate(bullet, transform.position, transform.rotation);
         
@@ -178,7 +185,10 @@ public class BossEnemy : MonoBehaviour
     
     IEnumerator Dash()
     {
-        anim.SetBool("isDash", true);
+        if (!isDamaged)
+        {
+            anim.SetBool("isDash", true);
+        }
         Debug.Log("Dash");
         yield return new WaitForSeconds(1f);
         _dust.transform.position = transform.position;
@@ -194,9 +204,12 @@ public class BossEnemy : MonoBehaviour
     
     IEnumerator FireMissile()
     {
+        if (!isDamaged)
+        {
+            anim.SetTrigger("doFire");
+        }
         Debug.Log("FireMissile");
         isChase = false;
-        anim.SetTrigger("doFire");
         
         Instantiate(NiddleBall, transform.position, transform.rotation);
 
@@ -231,18 +244,19 @@ public class BossEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             anim.SetTrigger("doDamaged");
+            Vector3 reactVec = transform.position - collision.transform.position;
+            StartCoroutine(OnDamage(reactVec));
         }
     }
 
     IEnumerator OnDamage(Vector3 reactVec)
     {
+        isDamaged = true;
+        curHealth -= 100;
+        Debug.Log(curHealth);
+        yield return new WaitForSeconds(1.0f);
+        isDamaged = false;
 
-        yield return new WaitForSeconds(0.1f);
-
-        reactVec = reactVec.normalized;
-        reactVec += Vector3.up;
-        rigid.AddForce(reactVec * 5, ForceMode.Impulse);
-        
         if (curHealth > 0)
         {
             //mat.color = Color.white;

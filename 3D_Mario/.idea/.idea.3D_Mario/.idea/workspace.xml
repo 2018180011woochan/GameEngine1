@@ -7,8 +7,12 @@
     <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP/Boss_AniContr.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP/Boss_AniContr.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +25,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossMissile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossMapCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e305c6675934225bda51d83171aa22024800/63/d90f4319/ParticleSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossRock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossNiddleBall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossBullet.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -86,7 +92,9 @@
       <workItem from="1652879088048" duration="894000" />
       <workItem from="1654011821753" duration="600000" />
       <workItem from="1654029353855" duration="1279000" />
-      <workItem from="1654821605723" duration="6948000" />
+      <workItem from="1654821605723" duration="7732000" />
+      <workItem from="1654871261341" duration="2929000" />
+      <workItem from="1654936664035" duration="1064000" />
     </task>
     <servers />
   </component>
