@@ -234,6 +234,14 @@ public class BossEnemy : MonoBehaviour
             Vector3 reactVec = transform.position - collision.transform.position;
             StartCoroutine(OnDamage(reactVec));
         }
+        
+        if (collision.gameObject.tag == "bomb")
+        {
+            Debug.Log("으악");
+            anim.SetTrigger("doDamaged");
+            Vector3 reactVec = transform.position - collision.transform.position;
+            StartCoroutine(OnDamage(reactVec));
+        }
     }
 
     IEnumerator OnDamage(Vector3 reactVec)
