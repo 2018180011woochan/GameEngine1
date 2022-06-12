@@ -13,6 +13,7 @@ public class BossEnemy : MonoBehaviour
     public BoxCollider Head;
     public GameObject bullet;
     public GameObject NiddleBall;
+    public GameObject Bobomb;
     public bool isChase;
     public bool isAttack;
     public GameObject _dust;
@@ -134,11 +135,11 @@ public class BossEnemy : MonoBehaviour
                 break;
             case 2:
                 // 돌격공격 패턴
-                StartCoroutine(Dash());
+                //StartCoroutine(Dash());
                 break;
             case 3:
                 // 돌굴러가는 패턴
-                StartCoroutine(RockShot());
+                //StartCoroutine(RockShot());
                 break;
             case 4:
                 // 미사일쏘는 패턴
@@ -200,8 +201,9 @@ public class BossEnemy : MonoBehaviour
         Debug.Log("FireMissile");
         isChase = false;
         
-        Instantiate(NiddleBall, transform.position, transform.rotation);
-
+        //Instantiate(NiddleBall, transform.position, transform.rotation);
+        //Instantiate(Bobomb, transform.position, transform.rotation);
+        ObjectPoolManager.Instance.Spawn("Bobomb", transform.position);
         yield return new WaitForSeconds(3f);
  
         StartCoroutine(Think());
@@ -222,8 +224,7 @@ public class BossEnemy : MonoBehaviour
         if (other.tag == "Melee")
         {
             curHealth -= 10;
-            Vector3 reactVec = transform.position - other.transform.position;
-            StartCoroutine(OnDamage(reactVec));
+            StartCoroutine(OnDamage());
         }
 
     }
@@ -236,8 +237,7 @@ public class BossEnemy : MonoBehaviour
             {
                 Debug.Log("ok");
                 anim.SetTrigger("doDamaged");
-                Vector3 reactVec = transform.position - collision.transform.position;
-                StartCoroutine(OnDamage(reactVec));
+                StartCoroutine(OnDamage());
             }
         }
 
@@ -245,12 +245,11 @@ public class BossEnemy : MonoBehaviour
         {
             Debug.Log("으악");
             anim.SetTrigger("doDamaged");
-            Vector3 reactVec = transform.position - collision.transform.position;
-            StartCoroutine(OnDamage(reactVec));
+            StartCoroutine(OnDamage());
         }
     }
 
-    IEnumerator OnDamage(Vector3 reactVec)
+    IEnumerator OnDamage()
     {
         isDamaged = true;
         curHealth -= 100;

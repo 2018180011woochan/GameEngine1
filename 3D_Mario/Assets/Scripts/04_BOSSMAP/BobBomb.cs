@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class BobBomb : MonoBehaviour
 {
-    public Transform target;
-    public Transform Boss;
+    public GameObject target;
+    public GameObject Boss;
+    //public Transform target;
+    //public Transform Boss;
     private BoxCollider boxCollider;
     private Animator anim;
     private Rigidbody rigid;
@@ -30,16 +32,19 @@ public class BobBomb : MonoBehaviour
     private void Update()
     {
         if (isShoot)
-            transform.position = Vector3.MoveTowards(transform.position, Boss.position, 50 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, Boss.transform.position, 50 * Time.deltaTime);
         if (isChase && !isShoot)
-            nav.SetDestination(target.position);
+            nav.SetDestination(target.transform.position);
     }
     
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Boss")
         {
-            Destroy(gameObject);
+            if (isDown)
+            {
+                Destroy(gameObject);
+            }
         }
         
         if (collision.gameObject.tag == "Player")
@@ -50,6 +55,7 @@ public class BobBomb : MonoBehaviour
             }
             else
             {
+                Debug.Log("플레이어와충돌");
                 if (target.transform.position.y > 1)
                     StartCoroutine(Down());
             }

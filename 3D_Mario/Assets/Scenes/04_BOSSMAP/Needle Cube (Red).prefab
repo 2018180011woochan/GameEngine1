@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515169457589326509, guid: 5b184b6f8dcec9440a665b7f5cdea83b, type: 3}
       propertyPath: m_TagString
-      value: BossBullet
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 6515169457589326511, guid: 5b184b6f8dcec9440a665b7f5cdea83b, type: 3}
       propertyPath: m_Layer
