@@ -71,12 +71,15 @@ public class BossEnemy : MonoBehaviour
             lookVec = new Vector3(h, 0, v) * 5f;
         }
 
-        if (nav.enabled && !isDamaged)
+        if (nav.enabled)
        {
-           if (!isDead)
+           if (!isDamaged)
            {
-               nav.SetDestination(target.position);
-               nav.isStopped = !isChase;
+               if (!isDead)
+               {
+                   nav.SetDestination(target.position);
+                   nav.isStopped = !isChase;
+               }
            }
        }
     }
@@ -269,7 +272,7 @@ public class BossEnemy : MonoBehaviour
         isDamaged = true;
         curHealth -= 100;
         Debug.Log(curHealth);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         isDamaged = false;
 
         if (curHealth > 0)
