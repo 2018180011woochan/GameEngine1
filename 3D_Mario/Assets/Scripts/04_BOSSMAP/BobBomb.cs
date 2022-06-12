@@ -60,6 +60,10 @@ public class BobBomb : MonoBehaviour
                 isChase = true;
                 
             }
+            else
+            {
+                isDown = false;
+            }
         }
         
         if (collision.gameObject.tag == "Player")

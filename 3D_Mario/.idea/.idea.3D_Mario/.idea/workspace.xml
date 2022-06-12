@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BobBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BobBomb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
       <workItem from="1654940386810" duration="3073000" />
       <workItem from="1654954283982" duration="2379000" />
       <workItem from="1655013273403" duration="1851000" />
-      <workItem from="1655015773407" duration="3180000" />
+      <workItem from="1655015773407" duration="3526000" />
     </task>
     <servers />
   </component>

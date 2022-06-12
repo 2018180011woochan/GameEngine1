@@ -2277,7 +2277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3202437055120506642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8239871, y: 0, z: 0.19668055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2329,7 +2329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CHARACTER_SPPED: 6
   JUMPFORCE: 700
+  ISGROUND: 1
   Mario: {fileID: 3202437055120506642}
+  _Dust: {fileID: 0}
 --- !u!54 &-909254964625602537
 Rigidbody:
   m_ObjectHideFlags: 0
