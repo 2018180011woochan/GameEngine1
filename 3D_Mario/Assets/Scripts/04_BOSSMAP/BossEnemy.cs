@@ -31,7 +31,7 @@ public class BossEnemy : MonoBehaviour
     private Vector3 tauntVec;
     public bool isLook;
     private bool isDamaged;
-
+    private bool isDead;
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -46,6 +46,7 @@ public class BossEnemy : MonoBehaviour
         isLook = true;
         maxHealth = 1000;
         curHealth = 1000;
+        isDead = false;
     }
 
     void ChaseStart()
@@ -57,6 +58,12 @@ public class BossEnemy : MonoBehaviour
 
     private void Update()
     {
+        if (curHealth <= 0)
+        {
+            anim.SetTrigger("doDead");
+            isDead = true;
+        }
+        
         if (isLook)
         {
             float h = Input.GetAxisRaw("Horizontal");
@@ -66,8 +73,11 @@ public class BossEnemy : MonoBehaviour
 
         if (nav.enabled && !isDamaged)
        {
-           nav.SetDestination(target.position);
-           nav.isStopped = !isChase;
+           if (!isDead)
+           {
+               nav.SetDestination(target.position);
+               nav.isStopped = !isChase;
+           }
        }
     }
 
@@ -124,29 +134,32 @@ public class BossEnemy : MonoBehaviour
     
     IEnumerator Think()
     {
-        yield return new WaitForSeconds(0.1f);
-
-        int ranAction = UnityEngine.Random.Range(0, 5);
-
-        switch (ranAction)
+        if (!isDead)
         {
-            case 0:
-            case 1:
-                // 플레이어 쫓아가는 패턴
-                StartCoroutine(ChasePlayer());
-                break;
-            case 2:
-                // 돌격공격 패턴
-                StartCoroutine(Dash());
-                break;
-            case 3:
-                // 돌굴러가는 패턴
-                StartCoroutine(RockShot());
-                break;
-            case 4:
-                // 미사일쏘는 패턴
-                StartCoroutine(FireMissile());
-                break;
+            yield return new WaitForSeconds(0.1f);
+
+            int ranAction = UnityEngine.Random.Range(0, 5);
+
+            switch (ranAction)
+            {
+                case 0:
+                case 1:
+                    // 플레이어 쫓아가는 패턴
+                    StartCoroutine(ChasePlayer());
+                    break;
+                case 2:
+                    // 돌격공격 패턴
+                    StartCoroutine(Dash());
+                    break;
+                case 3:
+                    // 돌굴러가는 패턴
+                    StartCoroutine(RockShot());
+                    break;
+                case 4:
+                    // 미사일쏘는 패턴
+                    StartCoroutine(FireMissile());
+                    break;
+            }
         }
     }
 
