@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class BossEnemy : MonoBehaviour
 {
+    public static BossEnemy Instance;
+    
     public int maxHealth;
     public int curHealth;
     public Transform target;
@@ -135,11 +137,11 @@ public class BossEnemy : MonoBehaviour
                 break;
             case 2:
                 // 돌격공격 패턴
-                //StartCoroutine(Dash());
+                StartCoroutine(Dash());
                 break;
             case 3:
                 // 돌굴러가는 패턴
-                //StartCoroutine(RockShot());
+                StartCoroutine(RockShot());
                 break;
             case 4:
                 // 미사일쏘는 패턴
