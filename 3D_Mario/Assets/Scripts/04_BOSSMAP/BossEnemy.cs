@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class BossEnemy : MonoBehaviour
 {
-    public static BossEnemy Instance;
+    private AudioSource _audioSource;
     
     public int maxHealth;
     public int curHealth;
@@ -39,6 +39,7 @@ public class BossEnemy : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         Head = GetComponent<BoxCollider>();
+        _audioSource = this.gameObject.GetComponent<AudioSource>();
 
         nav.isStopped = true;
         Invoke("ChaseStart", 0.1f);
@@ -269,9 +270,10 @@ public class BossEnemy : MonoBehaviour
 
     IEnumerator OnDamage()
     {
+        this._audioSource.Play();
         isDamaged = true;
         curHealth -= 100;
-        if (curHealth > 0)
+        if (curHealth < 0)
             curHealth = 0;
         Debug.Log(curHealth);
         yield return new WaitForSeconds(2.0f);
