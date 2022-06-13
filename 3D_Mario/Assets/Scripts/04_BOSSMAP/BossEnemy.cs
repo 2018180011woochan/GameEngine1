@@ -271,6 +271,8 @@ public class BossEnemy : MonoBehaviour
     {
         isDamaged = true;
         curHealth -= 100;
+        if (curHealth > 0)
+            curHealth = 0;
         Debug.Log(curHealth);
         yield return new WaitForSeconds(2.0f);
         isDamaged = false;
