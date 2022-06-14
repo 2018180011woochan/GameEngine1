@@ -16,6 +16,7 @@ public class Goomba : MonoBehaviour
 
     void Awake()
     {
+        target = GameObject.Find("Mario").transform;
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();

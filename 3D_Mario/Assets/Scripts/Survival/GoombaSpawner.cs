@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class GoombaSpawner : MonoBehaviour
 {
-    public GameObject goomba;
+    public ObjectPoolingManager poolingManager;
 
     private float spawnTime;
     private float cooldownTime;
+
+    public int maxCount = 10;
+    private int count;
     
     // Start is called before the first frame update
     void Start()
     {
         spawnTime = 5f;
         cooldownTime = 0f;
+        count = 0;
     }
 
     // Update is called once per frame
@@ -22,11 +26,16 @@ public class GoombaSpawner : MonoBehaviour
         cooldownTime += Time.deltaTime;
         if (cooldownTime >= spawnTime)
         {
-            var position = transform.position;
-            position.y += transform.localScale.y * 0.5f;
-            Instantiate(goomba, position, transform.rotation);
-            cooldownTime = 0f;
-            //print("create goomba");
+            if (count < maxCount)
+            {
+                var position = transform.position;
+                position.y += transform.localScale.y;
+                //Instantiate(goomba, position, transform.rotation);
+                poolingManager.Get("goomba", position, transform.rotation);
+                cooldownTime = 0f;
+                count++;
+                //print("create goomba");
+            }
         }
     }
 }
