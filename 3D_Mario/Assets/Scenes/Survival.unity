@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a787fdabb952ef3489e584b25a3db2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7680481949895760078, guid: cb1d72f9f9b20b3488c92ec135681980, type: 3}
+  poolingManager: {fileID: 1365197688}
 --- !u!1 &276398667
 GameObject:
   m_ObjectHideFlags: 0
@@ -5223,7 +5223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a787fdabb952ef3489e584b25a3db2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7680481949895760078, guid: cb1d72f9f9b20b3488c92ec135681980, type: 3}
+  poolingManager: {fileID: 1365197688}
 --- !u!1 &1365197687
 GameObject:
   m_ObjectHideFlags: 0
