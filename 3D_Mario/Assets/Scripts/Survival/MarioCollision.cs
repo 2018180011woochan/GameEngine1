@@ -19,8 +19,9 @@ public class MarioCollision : MonoBehaviour
         vulnerableTime -= Time.fixedDeltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Bullet") ||
             collision.gameObject.CompareTag("Goomba"))
         {
