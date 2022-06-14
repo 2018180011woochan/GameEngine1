@@ -19,6 +19,7 @@ public class BossEnemy : MonoBehaviour
     public bool isChase;
     public bool isAttack;
     public GameObject _dust;
+    public Transform DoorTransform;
     
     private Vector3 MoveDir = new Vector3(0,0,0);
     
@@ -63,6 +64,9 @@ public class BossEnemy : MonoBehaviour
         {
             anim.SetTrigger("doDead");
             isDead = true;
+            
+            if (DoorTransform.transform.position.y > -90)
+                DoorTransform.Rotate(new Vector3(0, -10 * Time.deltaTime, 0));
         }
         
         if (isLook)
@@ -272,7 +276,7 @@ public class BossEnemy : MonoBehaviour
     {
         this._audioSource.Play();
         isDamaged = true;
-        curHealth -= 100;
+        curHealth -= 1000;
         if (curHealth < 0)
             curHealth = 0;
         Debug.Log(curHealth);
