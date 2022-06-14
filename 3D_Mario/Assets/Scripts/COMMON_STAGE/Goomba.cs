@@ -21,7 +21,12 @@ public class Goomba : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
-        Invoke("ChaseStart", 2);
+        // Invoke("ChaseStart", 2);
+    }
+
+    public void SetStart()
+    {
+        Invoke("ChaseStart", 0.5f);
     }
 
     void ChaseStart()
@@ -90,23 +95,56 @@ public class Goomba : MonoBehaviour
         FreezeVelocity();
     }
 
-    void OnTriggerEnter(Collider other)
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        isChase = false;
+    //        nav.enabled = false;
+    //    }
+    //}
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        isChase = true;
+    //        nav.enabled = true;
+    //    }
+    //}
+
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             isChase = false;
             nav.enabled = false;
 
-            //Destroy(gameObject);
+            if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
+            {
+                Rigidbody rigidPlayer = target.GetComponent<Rigidbody>();
+                rigidPlayer.AddForce(transform.up * 20f, ForceMode.Impulse);
+
+
+                //Destroy(gameObject);
+                gameObject.SetActive(false);
+            }
+
+            else
+            {
+                gameObject.tag = "Goomba";
+            }
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             isChase = true;
             nav.enabled = true;
         }
+
+        gameObject.tag = "Monster";
     }
 }

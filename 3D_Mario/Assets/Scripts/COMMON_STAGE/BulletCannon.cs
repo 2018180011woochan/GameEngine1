@@ -9,6 +9,7 @@ public class BulletCannon : MonoBehaviour
 
     public Transform bulletPos;
     public GameObject bullet;
+    public GameObject player;
 
     void Awake()
     {
@@ -17,7 +18,7 @@ public class BulletCannon : MonoBehaviour
 
     IEnumerator Fire()
     {
-        while (true)
+        while (player.transform.position.z <= 40)
         {
             // bullet น฿ป็
             if (dir == DIR.LEFT)
