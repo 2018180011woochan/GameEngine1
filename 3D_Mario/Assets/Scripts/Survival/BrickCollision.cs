@@ -20,7 +20,7 @@ public class BrickCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             print("Destroy Bullet");
         }
     }
