@@ -23,7 +23,9 @@ public class MarioCollision : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Bullet") ||
-            collision.gameObject.CompareTag("Goomba"))
+            collision.gameObject.CompareTag("Goomba") ||
+            collision.gameObject.CompareTag("Spike")
+            )
         {
             if (vulnerableTime <= 0f)
             {

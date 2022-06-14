@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class MarioLifeCounter : MonoBehaviour
+public class MarioLifeUi : MonoBehaviour
 {
     public MarioCollision mario;
     public TMP_Text text;

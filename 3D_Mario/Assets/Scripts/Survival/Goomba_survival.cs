@@ -49,8 +49,8 @@ public class Goomba_survival : MonoBehaviour
 
     void Targeting()
     {
-        float targetRadius = 0.5f;
-        float targetRange = 0.5f;
+        float targetRadius = 0.4f;
+        float targetRange = 0.4f;
 
         RaycastHit[] rayHits =
             Physics.SphereCastAll(transform.position,
