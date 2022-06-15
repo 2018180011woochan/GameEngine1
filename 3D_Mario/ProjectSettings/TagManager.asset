@@ -14,6 +14,7 @@ TagManager:
   - WORLD1-3
   - WORLD1-4
   - WORLD1-5
+  - Coin
   layers:
   - Default
   - TransparentFX

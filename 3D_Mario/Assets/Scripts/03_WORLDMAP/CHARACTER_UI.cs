@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CHARACTER_UI : MonoBehaviour
+public class CHARACTER_UI : BASIC_SINGLETON<CHARACTER_UI>
 {
     public TextMeshProUGUI COIN_TEXT;
     int Ten, One;
-
+    private void Start()
+    {
+        Ten = DATA_MNG.H.CHARACTER_COIN / 10;
+        One = DATA_MNG.H.CHARACTER_COIN % 10;
+        COIN_TEXT.text = "<sprite name=\"MarioNum_" + Ten.ToString() + "\" color=#ffff00> <sprite name=\"MarioNum_" + One.ToString() + "\" color=#ffff00>";
+    }
     public void click()
     {
         if (Ten < 9 &&One == 9)
@@ -19,7 +24,8 @@ public class CHARACTER_UI : MonoBehaviour
         {
             Ten = 0;
             One = 0;
-            // life + 1
+            DATA_MNG.H.CHARACTER_HP += 1;
+            DATA_MNG.H.CHARACTER_COIN = 0;
         }
         else
         {

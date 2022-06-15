@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CHARACTER : MonoBehaviour
 {
@@ -14,11 +15,14 @@ public class CHARACTER : MonoBehaviour
     public bool ISGROUND = true;
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
+    public TextMeshProUGUI LIFE_TEXT;
     float h, v;
+
     void Start()
     {
         ANIMATOR = GetComponent<Animator>();
         RIGIDBODY = GetComponent<Rigidbody>();
+        LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
     }
 
     void FixedUpdate()
@@ -60,54 +64,67 @@ public class CHARACTER : MonoBehaviour
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
+            SOUND_MNG.H.PlaySound("JUMP");
         }
     }
 
-    
+
     void OnCollisionEnter(Collision collision)
     {
         //!> 캐릭터와 충돌한 물체의 태그가 Ground일때 점프 갱신
         if (collision.gameObject.CompareTag("Ground"))
         {
             ISGROUND = true;
-            
         }
 
         if (collision.gameObject.CompareTag("Monster"))
         {
             if (DATA_MNG.H.CHARACTER_HP == 0)
             {
-                DATA_MNG.H.CHARACTER_HP = 1;
-                DATA_MNG.H.CHARACTER_LIFE -= 1;
                 // 이후 게임오버 제작
             }
             else
             {
                 DATA_MNG.H.CHARACTER_HP -= 1;
+                LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
             }
         }
+
+
     }
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            CHARACTER_UI.H.click();
+            DATA_MNG.H.CHARACTER_COIN += 1;
+            SOUND_MNG.H.PlaySound("COIN");
+            LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
+        }
+
         if (other.gameObject.CompareTag("WORLD1-2"))
         {
             WORLDMAP_UI.H.FadeStart();
+            SAVEDATA_MNG.SAVE_DATA();
             LOAD_MNG.LoadScene("COMMON_STAGE");
         }
         else if (other.gameObject.CompareTag("WORLD1-3"))
         {
             WORLDMAP_UI.H.FadeStart();
+
             LOAD_MNG.LoadScene("Survival");
         }
         else if (other.gameObject.CompareTag("WORLD1-4"))
         {
             WORLDMAP_UI.H.FadeStart();
+
             LOAD_MNG.LoadScene("YSK_WORLD1");
         }
         else if (other.gameObject.CompareTag("WORLD1-5"))
         {
             WORLDMAP_UI.H.FadeStart();
+
             LOAD_MNG.LoadScene("04_BOSSMAP");
         }
     }

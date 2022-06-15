@@ -54,6 +54,7 @@ public class WORLDMAP_UI : BASIC_SINGLETON<WORLDMAP_UI>
 
     public void EXIT_BUTTON()
     {
+        
         Application.Quit();
     }
 }
