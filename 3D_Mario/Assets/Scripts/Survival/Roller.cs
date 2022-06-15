@@ -15,7 +15,7 @@ public class Roller : MonoBehaviour
 
     void FixedUpdate()
     {
-		transform.Translate(direction * Time.deltaTime, Space.World);
+		transform.Translate(direction * Time.fixedDeltaTime, Space.World);
 		var axis = new Vector3(direction.z, 0, 0);
 		transform.Rotate(axis * Time.deltaTime * 100f);
     }

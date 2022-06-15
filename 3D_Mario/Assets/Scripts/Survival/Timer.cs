@@ -6,11 +6,11 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public TMP_Text text;
-    private float time;
+    public float time = 60f;
 
     void Awake()
     {
-        time = 100f;
+        time = 60f;
     }
 
     void FixedUpdate()

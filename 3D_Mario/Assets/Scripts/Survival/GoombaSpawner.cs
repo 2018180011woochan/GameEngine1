@@ -15,7 +15,7 @@ public class GoombaSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTime = 5f;
+        spawnTime = 10f;
         cooldownTime = 0f;
         count = 0;
     }
