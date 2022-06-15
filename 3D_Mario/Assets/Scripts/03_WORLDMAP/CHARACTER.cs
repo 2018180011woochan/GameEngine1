@@ -72,13 +72,13 @@ public class CHARACTER : MonoBehaviour
             ISGROUND = true;
             
         }
-
+        /////////// Made by WC //////////////////////////////////////
         if (collision.gameObject.CompareTag("JumpBooster"))
         {
             RIGIDBODY.AddForce(Mario.transform.up * 1500.0f);
             _Dust._Particle.Stop();
         }
-        
+        /////////////////////////////////////////////////////////////
         if (collision.gameObject.CompareTag("Monster"))
         {
             if (DATA_MNG.H.CHARACTER_HP == 0)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossMapCamera : MonoBehaviour
 {
     public GameObject Player;
-    
+
     public float CameraX = 0f;
     public float CameraY = 25f;
     public float CameraZ = -35f;

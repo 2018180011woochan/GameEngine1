@@ -33,6 +33,8 @@ public class BossEnemy : MonoBehaviour
     public bool isLook;
     private bool isDamaged;
     private bool isDead;
+
+    private float mytime;
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -41,9 +43,9 @@ public class BossEnemy : MonoBehaviour
         anim = GetComponent<Animator>();
         Head = GetComponent<BoxCollider>();
         _audioSource = this.gameObject.GetComponent<AudioSource>();
-
+        mytime = 0;
         nav.isStopped = true;
-        Invoke("ChaseStart", 0.1f);
+        Invoke("ChaseStart", 2.0f);
         StartCoroutine(Think());
         isLook = true;
         maxHealth = 1000;
@@ -60,6 +62,10 @@ public class BossEnemy : MonoBehaviour
 
     private void Update()
     {
+        mytime += Time.deltaTime;
+        if (mytime < 2.0f)
+            return;
+
         if (curHealth <= 0)
         {
             anim.SetTrigger("doDead");
@@ -153,18 +159,39 @@ public class BossEnemy : MonoBehaviour
                 case 0:
                 case 1:
                     // 플레이어 쫓아가는 패턴
+                    if (mytime < 2.0f)
+                    {
+                        StartCoroutine(Think());
+                        break;
+                    }
+                        
                     StartCoroutine(ChasePlayer());
                     break;
                 case 2:
                     // 돌격공격 패턴
+                    if (mytime < 2.0f)
+                    {
+                        StartCoroutine(Think());
+                        break;
+                    }
                     StartCoroutine(Dash());
                     break;
                 case 3:
                     // 돌굴러가는 패턴
+                    if (mytime < 2.0f)
+                    {
+                        StartCoroutine(Think());
+                        break;
+                    }
                     StartCoroutine(RockShot());
                     break;
                 case 4:
                     // 미사일쏘는 패턴
+                    if (mytime < 2.0f)
+                    {
+                        StartCoroutine(Think());
+                        break;
+                    }
                     StartCoroutine(FireMissile());
                     break;
             }
@@ -276,7 +303,7 @@ public class BossEnemy : MonoBehaviour
     {
         this._audioSource.Play();
         isDamaged = true;
-        curHealth -= 1000;
+        curHealth -= 100;
         if (curHealth < 0)
             curHealth = 0;
         Debug.Log(curHealth);

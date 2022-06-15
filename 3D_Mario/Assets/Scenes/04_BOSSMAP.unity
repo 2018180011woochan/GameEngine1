@@ -7190,6 +7190,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &571617627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571617623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &586976377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12449,6 +12462,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9001872250290640647, guid: 2d68fc98b8faed24289066ad1c74073c, type: 3}
   m_PrefabInstance: {fileID: 310692646}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &753148937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 753148939}
+  - component: {fileID: 753148938}
+  m_Layer: 0
+  m_Name: Timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &753148938
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753148937}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 78683072769637f439f47ed45a3963cc, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 6665705178384705576, guid: 78683072769637f439f47ed45a3963cc, type: 2}
+    value: {fileID: 1208235384}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References:
+    - 699019ddf07d42e40b1804ea562577f2: {fileID: 0}
+--- !u!4 &753148939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753148937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5114398, y: -16.998983, z: 94.24839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &771892354
 GameObject:
   m_ObjectHideFlags: 0
@@ -13766,6 +13835,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1208235384 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6622091714223624366, guid: 1edd1c41b3540534fba72ece4dca9447, type: 3}
+  m_PrefabInstance: {fileID: 131816432744221030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1211029920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13970,11 +14044,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13997,8 +14071,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226446251}
-  m_LocalRotation: {x: 0, y: 0.024030833, z: 0, w: 0.9997113}
-  m_LocalPosition: {x: -5.75, y: 10.53, z: -46.51}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.2, z: -34.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14020,7 +14094,7 @@ MonoBehaviour:
   Player: {fileID: 3202437054888224871}
   CameraX: 0
   CameraY: 5
-  CameraZ: -15
+  CameraZ: -30
   CameraSpeed: 3
 --- !u!82 &1226446256
 AudioSource:
@@ -17290,7 +17364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293606712751524671, guid: 1edd1c41b3540534fba72ece4dca9447, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.047565237
+      value: -0.04756525
       objectReference: {fileID: 0}
     - target: {fileID: 1293606712751524671, guid: 1edd1c41b3540534fba72ece4dca9447, type: 3}
       propertyPath: m_LocalRotation.y
@@ -17298,7 +17372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1293606712751524671, guid: 1edd1c41b3540534fba72ece4dca9447, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.033603232
+      value: -0.033603247
       objectReference: {fileID: 0}
     - target: {fileID: 1584303809231155586, guid: 1edd1c41b3540534fba72ece4dca9447, type: 3}
       propertyPath: m_LocalRotation.w
