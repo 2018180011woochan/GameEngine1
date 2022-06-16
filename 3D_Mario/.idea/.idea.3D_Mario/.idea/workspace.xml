@@ -10,8 +10,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/ObjectPoolingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Roller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Timer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/MarioLifeUi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/MarioCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/BrickCollision.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -67,6 +74,19 @@
       <updated>1650352501625</updated>
       <workItem from="1650352502212" duration="5543000" />
       <workItem from="1650444360388" duration="1713000" />
+      <workItem from="1652759692593" duration="2161000" />
+      <workItem from="1652763453804" duration="366000" />
+      <workItem from="1652763865184" duration="784000" />
+      <workItem from="1652764727023" duration="37000" />
+      <workItem from="1652878699800" duration="2882000" />
+      <workItem from="1654090568279" duration="3145000" />
+      <workItem from="1655186033114" duration="4965000" />
+      <workItem from="1655278591689" duration="1642000" />
+      <workItem from="1655382014375" duration="318000" />
+      <workItem from="1655384898014" duration="642000" />
+      <workItem from="1655385618344" duration="1201000" />
+      <workItem from="1655390112949" duration="168000" />
+      <workItem from="1655391719032" duration="296000" />
     </task>
     <servers />
   </component>

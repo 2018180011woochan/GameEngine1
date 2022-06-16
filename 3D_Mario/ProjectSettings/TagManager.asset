@@ -13,6 +13,14 @@ TagManager:
   - WORLD1-2
   - WORLD1-3
   - WORLD1-4
+  - WORLD1-5
+  - Coin
+  - MushRoom
+  - Bobomb
+  - Boss
+  - BossBullet
+  - JumpBooster
+  - bomb
   layers:
   - Default
   - TransparentFX
