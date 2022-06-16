@@ -20,18 +20,16 @@ public class Switch_Common : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
-            //{
-
-            //}
-
-            if (!isPress)
+            if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
             {
-                audioSource.clip = audioSwitch;
-                audioSource.Play();
+                if (!isPress)
+                {
+                    audioSource.clip = audioSwitch;
+                    audioSource.Play();
+                }
+                anim.SetBool("isPress", true);
+                isPress = true;
             }
-            anim.SetBool("isPress", true);
-            isPress = true;
         }
     }
 }
