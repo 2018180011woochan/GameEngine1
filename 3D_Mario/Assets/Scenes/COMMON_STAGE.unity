@@ -10078,7 +10078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8299578464495954487, guid: b6f258506bba1e248a715f7cede4166b, type: 3}
       propertyPath: m_TagString
-      value: Monster
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8299578464495954489, guid: b6f258506bba1e248a715f7cede4166b, type: 3}
       propertyPath: m_Layer
@@ -14823,7 +14823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5560608345248323637, guid: 106f8e4dfc96a954ea6ac35559e66983, type: 3}
       propertyPath: m_TagString
-      value: Monster
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5560608345248323637, guid: 106f8e4dfc96a954ea6ac35559e66983, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -23391,7 +23391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8299578464495954487, guid: b6f258506bba1e248a715f7cede4166b, type: 3}
       propertyPath: m_TagString
-      value: Monster
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8299578464495954489, guid: b6f258506bba1e248a715f7cede4166b, type: 3}
       propertyPath: m_Layer
@@ -27226,7 +27226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1885335131331726593, guid: bf9f419ca202a1c44badfce89719b932, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 132.59
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 1885335131331726593, guid: bf9f419ca202a1c44badfce89719b932, type: 3}
       propertyPath: m_LocalRotation.w

@@ -21,6 +21,7 @@ TagManager:
   - BossBullet
   - JumpBooster
   - bomb
+  - Spike
   layers:
   - Default
   - TransparentFX
