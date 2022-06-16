@@ -303,7 +303,7 @@ public class BossEnemy : MonoBehaviour
     {
         this._audioSource.Play();
         isDamaged = true;
-        curHealth -= 100;
+        curHealth -= 150;
         if (curHealth < 0)
             curHealth = 0;
         Debug.Log(curHealth);
