@@ -15,6 +15,7 @@ public class LOAD_MNG : MonoBehaviour
 
     public static void LoadScene(string sceneName)
     {
+        SAVEDATA_MNG.SAVE_DATA();
         nextScene = sceneName;
         SceneManager.LoadScene("00_LOAD");
     }

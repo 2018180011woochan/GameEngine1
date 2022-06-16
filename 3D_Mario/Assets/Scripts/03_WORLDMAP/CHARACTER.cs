@@ -19,7 +19,7 @@ public class CHARACTER : MonoBehaviour
     public TextMeshProUGUI LIFE_TEXT;
     public AudioSource WORLDMAP_MUSIC;
     float h, v;
-
+    public static bool isDeath = false;
     Vector3 _RespawnPoint;
     bool _IsSuperJumping = false;
 
@@ -32,7 +32,7 @@ public class CHARACTER : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (ISCONTROLABLE)
+        if (ISCONTROLABLE || isDeath == false)
         {
             MOVE();
             JUMP();
@@ -83,17 +83,15 @@ public class CHARACTER : MonoBehaviour
             _IsSuperJumping = false;
         }
 
-        if (collision.gameObject.CompareTag("Monster") ||collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Goomba") ||
-            collision.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Monster") ||collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Goomba") || collision.gameObject.CompareTag("Spike"))
         {
             if (DATA_MNG.H.CHARACTER_HP == 1)
             {
+                isDeath = true;
+                DATA_MNG.H.CHARACTER_HP = 0;
                 WORLDMAP_MUSIC.Stop();
+
                 SOUND_MNG.H.PlaySound("DEATH");
-                
-                DATA_MNG.H.CHARACTER_HP = 5;
-                DATA_MNG.H.CHARACTER_COIN = 0;
-                SAVEDATA_MNG.SAVE_DATA();
                 StartCoroutine(WaitForIt());
                 WORLDMAP_UI.H.FadeStart();
             }
@@ -115,6 +113,9 @@ public class CHARACTER : MonoBehaviour
     }
     IEnumerator WaitForIt()
     {
+        DATA_MNG.H.CHARACTER_HP = 5;
+        DATA_MNG.H.CHARACTER_COIN = 0;
+        SAVEDATA_MNG.SAVE_DATA();
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene("06_GAMEOVER");
     }
