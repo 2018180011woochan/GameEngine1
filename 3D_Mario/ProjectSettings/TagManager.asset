@@ -4,17 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Monster
-  - Goomba
-  - Brick
   - Bullet
-  - ground
-  - WORLD1-2
-  - WORLD1-3
-  - WORLD1-4
-  - WORLD1-5
-  - Coin
+  - Monster
+  - IgnoreCameraCollide
+  - Ground
+  - Goomba
+  - Bobomb
+  - Boss
+  - BossBullet
+  - JumpBooster
+  - bomb
   layers:
   - Default
   - TransparentFX
@@ -22,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
+  - 
   - 
   - 
   - 

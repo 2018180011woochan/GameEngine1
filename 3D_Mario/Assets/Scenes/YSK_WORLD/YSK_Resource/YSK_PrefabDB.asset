@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2316503267438f4ab5a8be06ae81688, type: 3}
+  m_Name: YSK_PrefabDB
+  m_EditorClassIdentifier: 
+  prefabs:
+  - prefabName: coin
+    prefabGameObject: {fileID: 4883834623839798025, guid: a447067e2ef039e47b8bc894bd04dc4a, type: 3}
+  - prefabName: mushroom
+    prefabGameObject: {fileID: 2731662416597584266, guid: 42b12a0233c0658448a0ed8d016c3cd1, type: 3}
+  - prefabName: dash_item
+    prefabGameObject: {fileID: 7304310727156204607, guid: d6ac4b3785407b64db3539ae1b350df9, type: 3}
+  - prefabName: checkpoint_item
+    prefabGameObject: {fileID: 7138108997803680465, guid: df795b3d2a8d0a444b5cc9feccbf0858, type: 3}

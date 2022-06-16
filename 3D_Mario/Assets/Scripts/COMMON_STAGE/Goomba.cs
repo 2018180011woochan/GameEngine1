@@ -14,14 +14,22 @@ public class Goomba : MonoBehaviour
     NavMeshAgent nav;
     Animator anim;
 
+    AudioSource audioSource;
+    public AudioClip audioGoomba;
+
     void Awake()
     {
+        target = GameObject.Find("Mario").transform;
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+    }
 
-        Invoke("ChaseStart", 2);
+    public void SetStart()
+    {
+        Invoke("ChaseStart", 0.5f);
     }
 
     void ChaseStart()
@@ -90,23 +98,33 @@ public class Goomba : MonoBehaviour
         FreezeVelocity();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             isChase = false;
             nav.enabled = false;
 
-            //Destroy(gameObject);
+            if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
+            {
+                Rigidbody rigidPlayer = target.GetComponent<Rigidbody>();
+                rigidPlayer.AddForce(transform.up * 20f, ForceMode.Impulse);
+                gameObject.SetActive(false);
+
+                audioSource.clip = audioGoomba;
+                audioSource.Play();
+            }
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             isChase = true;
             nav.enabled = true;
         }
+
+        gameObject.tag = "Monster";
     }
 }

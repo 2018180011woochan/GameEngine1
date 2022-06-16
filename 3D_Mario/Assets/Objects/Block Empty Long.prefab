@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Empty Long
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 36926c7e6bc899941a48d7fa80e20225, type: 3}
+      propertyPath: m_TagString
+      value: IgnoreCameraCollide
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36926c7e6bc899941a48d7fa80e20225, type: 3}
 --- !u!1 &66229855593074683 stripped
