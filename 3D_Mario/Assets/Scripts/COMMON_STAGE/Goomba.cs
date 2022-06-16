@@ -114,11 +114,6 @@ public class Goomba : MonoBehaviour
                 audioSource.clip = audioGoomba;
                 audioSource.Play();
             }
-
-            else
-            {
-                gameObject.tag = "Goomba";
-            }
         }
     }
 

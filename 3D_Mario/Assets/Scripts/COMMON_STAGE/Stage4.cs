@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stage4 : MonoBehaviour
 {
     //public GameObject[] Brick;
-    public GameObject[] GoombaSet;
+    public GameObject Goomba;
     public GameObject door;
     public GameObject[] switches;
 
@@ -22,7 +22,7 @@ public class Stage4 : MonoBehaviour
     void CheckDoor()
     {
         // door 1 - Goomba & Switch
-        if (!GoombaSet[0].activeSelf && !GoombaSet[1].activeSelf
+        if (!Goomba.activeSelf
             && switches[0].GetComponent<Switch_Common>().isPress
             && switches[1].GetComponent<Switch_Common>().isPress)
         {
