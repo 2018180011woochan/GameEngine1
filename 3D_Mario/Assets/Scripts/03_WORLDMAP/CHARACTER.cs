@@ -15,13 +15,18 @@ public class CHARACTER : MonoBehaviour
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
     float h, v;
+
+    Vector3 _RespawnPoint;
+    bool _IsSuperJumping = false;
+
     void Start()
     {
         ANIMATOR = GetComponent<Animator>();
         RIGIDBODY = GetComponent<Rigidbody>();
+        _RespawnPoint = transform.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (ISCONTROLABLE)
         {
@@ -42,7 +47,6 @@ public class CHARACTER : MonoBehaviour
             transform.position += dir * CHARACTER_SPPED * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * CHARACTER_ROTATE);
             ANIMATOR.SetBool("IS_RUN", true);
-
         }
         else
         {
@@ -56,21 +60,21 @@ public class CHARACTER : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
             //!> �� �������� JUMPFORCE��ŭ ���� ����
-            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
+
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
         }
     }
 
-    
     void OnCollisionEnter(Collision collision)
     {
-        //!> ĳ���Ϳ� �浹�� ��ü�� �±װ� Ground�϶� ���� ����
-        if (collision.gameObject.CompareTag("Ground"))
+
+        if (Mathf.Epsilon < collision.relativeVelocity.y)
         {
             ISGROUND = true;
-            
+            _IsSuperJumping = false;
         }
         /////////// Made by WC //////////////////////////////////////
         if (collision.gameObject.CompareTag("JumpBooster"))
@@ -115,18 +119,79 @@ public class CHARACTER : MonoBehaviour
 
 
     // vvv SUNKUE
+    public void SetRespawn(Vector3 respawnPoint)
+    {
+        _RespawnPoint = respawnPoint;
+    }
+
+    // skill
+    public void Respawn()
+    {
+        print("respawn");
+        transform.position = _RespawnPoint;
+        transform.rotation = Quaternion.identity;
+        ISCONTROLABLE = true;
+    }
+
+    bool _IsDashing = false;
+    float _origin_characterspeed;
+    public void Dash()
+    {
+        if (!_IsDashing)
+        {
+            print("Dash");
+            _IsDashing = true;
+            _origin_characterspeed = CHARACTER_SPPED;
+            StartCoroutine(DashCoroutine());
+        }
+    }
+
+    IEnumerator DashCoroutine()
+    {
+        const float boostingtime = 2f;
+        const float prespeedingtime = 1f;
+        float _interval_time = 0f;
+
+
+        for (; _interval_time <= prespeedingtime; _interval_time += Time.deltaTime)
+        {
+            CHARACTER_SPPED = Mathf.Lerp(CHARACTER_SPPED, _origin_characterspeed * 3.4f, Time.deltaTime);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        for (; _interval_time <= boostingtime; _interval_time += Time.deltaTime)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        CHARACTER_SPPED = _origin_characterspeed;
+        _IsDashing = false;
+    }
+
+    public void SuperJump()
+    {
+        if (!_IsSuperJumping)
+        {
+            print("SuperJump");
+            _IsSuperJumping = true;
+            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE * 2);
+            ANIMATOR.SetTrigger("JUMP");
+            ISGROUND = false;
+        }
+    }
+
     void ACTION()
     {
         ACTIONKEY_ON = Input.GetKey(KeyCode.LeftControl);
     }
 
-    internal bool GET_ACTIONKEY_ON()
+    public bool GET_ACTIONKEY_ON()
     {
         return ACTIONKEY_ON;
     }
 
 
-    void ReadyPipeAnimate()
+    public void ReadyAnimate()
     {
         ACTIONKEY_ON = false;
         ISCONTROLABLE = false;
@@ -137,7 +202,7 @@ public class CHARACTER : MonoBehaviour
         ANIMATOR.SetBool("IS_RUN", false);
     }
 
-    void FinishPipeAnimate()
+    public void FinishAnimate()
     {
         ISCONTROLABLE = true;
         RIGIDBODY.detectCollisions = true;
@@ -145,19 +210,21 @@ public class CHARACTER : MonoBehaviour
         RIGIDBODY.freezeRotation = false;
     }
 
-    internal void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
+    public void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyPipeAnimate();
+        ReadyAnimate();
         transform.position = pipe.GetHolePositionOutside();
         StartCoroutine(AnimateOnPipeAction(pipe, true));
     }
 
-    internal void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
+    public void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyPipeAnimate();
+        ReadyAnimate();
         transform.position = pipe.GetHolePositionInside();
         StartCoroutine(AnimateOnPipeAction(pipe, false));
     }
+
+
 
     IEnumerator AnimateOnPipeAction(YSK_PIPE_HOLE_SCRIPT pipe, bool enter)
     {
@@ -187,7 +254,7 @@ public class CHARACTER : MonoBehaviour
         }
         else
         {
-            FinishPipeAnimate();
+            FinishAnimate();
         }
     }
     // ^^^ SUNKUE

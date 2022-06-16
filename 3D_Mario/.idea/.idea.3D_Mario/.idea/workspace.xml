@@ -4,37 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resource/Meterial/Sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource/Meterial/Sky.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/04_BOSSMAP.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/ObjectPoolManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossMissile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossMapCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/be456b8f9e784da68ddeca6c10150e9dca00/0b/a16601ee/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9e305c6675934225bda51d83171aa22024800/63/d90f4319/ParticleSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossRock.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossNiddleBall.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/04_BOSSMAP/BossBullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/ObjectPoolingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Roller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/Timer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/MarioCollision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/MarioLifeUi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Survival/BrickCollision.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -89,28 +71,14 @@
       <updated>1650352501625</updated>
       <workItem from="1650352502212" duration="5543000" />
       <workItem from="1650444360388" duration="1713000" />
-      <workItem from="1651410824571" duration="4367000" />
-      <workItem from="1652611458744" duration="16427000" />
-      <workItem from="1652803256920" duration="9334000" />
-      <workItem from="1652875946886" duration="649000" />
-      <workItem from="1652879088048" duration="894000" />
-      <workItem from="1654011821753" duration="600000" />
-      <workItem from="1654029353855" duration="1279000" />
-      <workItem from="1654821605723" duration="7732000" />
-      <workItem from="1654871261341" duration="2929000" />
-      <workItem from="1654936664035" duration="2660000" />
-      <workItem from="1654940386810" duration="3073000" />
-      <workItem from="1654954283982" duration="2379000" />
-      <workItem from="1655013273403" duration="1851000" />
-      <workItem from="1655015773407" duration="5151000" />
-      <workItem from="1655135775027" duration="1597000" />
-      <workItem from="1655190109921" duration="1604000" />
-      <workItem from="1655212932435" duration="895000" />
-      <workItem from="1655275195353" duration="1932000" />
-      <workItem from="1655281045325" duration="2327000" />
-      <workItem from="1655285869375" duration="11000" />
-      <workItem from="1655377238551" duration="2303000" />
-      <workItem from="1655380954007" duration="519000" />
+      <workItem from="1652759692593" duration="2161000" />
+      <workItem from="1652763453804" duration="366000" />
+      <workItem from="1652763865184" duration="784000" />
+      <workItem from="1652764727023" duration="37000" />
+      <workItem from="1652878699800" duration="2882000" />
+      <workItem from="1654090568279" duration="3145000" />
+      <workItem from="1655186033114" duration="4965000" />
+      <workItem from="1655278591689" duration="1642000" />
     </task>
     <servers />
   </component>
@@ -120,18 +88,6 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
