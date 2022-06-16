@@ -186,7 +186,7 @@ public class BossEnemy : MonoBehaviour
                     StartCoroutine(RockShot());
                     break;
                 case 4:
-                    // 미사일쏘는 패턴
+                    // 몬스터소환 패턴
                     if (mytime < 2.0f)
                     {
                         StartCoroutine(Think());

@@ -87,6 +87,7 @@ public class BobBomb : MonoBehaviour
         anim.SetBool("isRun", false);
         anim.SetBool("isDown", true);
         gameObject.tag = "bomb";
+        Debug.Log(gameObject.tag);
         isChase = false;
         isDown = true;
         yield return new WaitForSeconds(5f);
