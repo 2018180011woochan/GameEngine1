@@ -31,39 +31,48 @@ public class SOUND_MNG : BASIC_SINGLETON<SOUND_MNG>
         {
             case "JUMP":
             {
-                    var rand = Random.Range(0, 3);
-                    if (rand == 0)
+                    if (CHARACTER.isDeath == false)
                     {
-                        audioSource.clip = AudioJump1;
+                        var rand = Random.Range(0, 3);
+                        if (rand == 0)
+                        {
+                            audioSource.clip = AudioJump1;
+                        }
+                        else if (rand == 1)
+                        {
+                            audioSource.clip = AudioJump2;
+                        }
+                        else if (rand == 2)
+                        {
+                            audioSource.clip = AudioJump3;
+                        }
                     }
-                    else if (rand == 1)
-                    {
-                        audioSource.clip = AudioJump2;
-                    }
-                    else if(rand == 2)
-                    {
-                        audioSource.clip = AudioJump3;
-                    }
+
             }
             break;
 
             case "COIN":
-                audioSource.clip = AudioCoin;
+                if (CHARACTER.isDeath == false)
+                    audioSource.clip = AudioCoin;
                 break;
             case "DEATH":
-                audioSource.clip = AudioDeath;
+                    audioSource.clip = AudioDeath;
                 break;
             case "OUCH":
                 {
-                    var rand = Random.Range(0, 2);
-                    if (rand == 0)
+                    if (CHARACTER.isDeath == false)
                     {
-                        audioSource.clip = AudioOuch1;
+                        var rand = Random.Range(0, 2);
+                        if (rand == 0)
+                        {
+                            audioSource.clip = AudioOuch1;
+                        }
+                        else if (rand == 1)
+                        {
+                            audioSource.clip = AudioOuch2;
+                        }
                     }
-                    else if (rand == 1)
-                    {
-                        audioSource.clip = AudioOuch2;
-                    }
+
                 }
                 break;
         }

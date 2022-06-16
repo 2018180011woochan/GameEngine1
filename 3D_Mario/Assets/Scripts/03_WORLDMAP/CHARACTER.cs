@@ -19,10 +19,9 @@ public class CHARACTER : MonoBehaviour
     public TextMeshProUGUI LIFE_TEXT;
     public AudioSource WORLDMAP_MUSIC;
     float h, v;
-    public static bool isDeath = false;
     Vector3 _RespawnPoint;
     bool _IsSuperJumping = false;
-
+    public static bool isDeath = false;
     void Start()
     {
         ANIMATOR = GetComponent<Animator>();
@@ -32,7 +31,7 @@ public class CHARACTER : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (ISCONTROLABLE || isDeath == false)
+        if (ISCONTROLABLE)
         {
             MOVE();
             JUMP();
@@ -87,19 +86,22 @@ public class CHARACTER : MonoBehaviour
         {
             if (DATA_MNG.H.CHARACTER_HP == 1)
             {
-                isDeath = true;
                 DATA_MNG.H.CHARACTER_HP = 0;
                 WORLDMAP_MUSIC.Stop();
-
+                isDeath = true;
                 SOUND_MNG.H.PlaySound("DEATH");
                 StartCoroutine(WaitForIt());
                 WORLDMAP_UI.H.FadeStart();
             }
             else
             {
-                SOUND_MNG.H.PlaySound("OUCH");
-                DATA_MNG.H.CHARACTER_HP -= 1;
-                LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
+                if (isDeath == false)
+                {
+                    SOUND_MNG.H.PlaySound("OUCH");
+                    DATA_MNG.H.CHARACTER_HP -= 1;
+                    LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
+                }
+
             }
         }
 
@@ -113,10 +115,11 @@ public class CHARACTER : MonoBehaviour
     }
     IEnumerator WaitForIt()
     {
+        yield return new WaitForSeconds(5.0f);
+        isDeath = false;
         DATA_MNG.H.CHARACTER_HP = 5;
         DATA_MNG.H.CHARACTER_COIN = 0;
         SAVEDATA_MNG.SAVE_DATA();
-        yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene("06_GAMEOVER");
     }
     void OnTriggerEnter(Collider other)
