@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using YSK_SCRIPSTS;
 
 
 public class PoolingManager : BASIC_SINGLETON<PoolingManager>
@@ -23,7 +23,7 @@ public class PoolingManager : BASIC_SINGLETON<PoolingManager>
         }
     }
 
-    // position rotation µîµî... Ãß°¡ °¡´É.. ¿À¹ö·Îµù..
+    // position rotation ï¿½ï¿½ï¿½... ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½.. ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½..
     public GameObject Get(string prefabName, Vector3 position, Quaternion rotation)
     {
         if (!_prefabDics.ContainsKey(prefabName))
