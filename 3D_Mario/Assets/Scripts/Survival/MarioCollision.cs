@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class MarioCollision : MonoBehaviour
 {
     public int life;
-    private float vulnerableTime;
+    //private float vulnerableTime;
 
     void Start()
     {
         life = 5;
-        vulnerableTime = 0f;
+        //vulnerableTime = 0f;
     }
 /*
     private void FixedUpdate()

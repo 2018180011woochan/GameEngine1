@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            player.transform.position = new Vector3(0f, 0f, -10f);
+            if (player.transform.position.z > 100)
+                player.transform.position = new Vector3(0f, 0f, 132f);
+
+            else
+                player.transform.position = new Vector3(0f, 0f, -10f);
         }
 
         //if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
