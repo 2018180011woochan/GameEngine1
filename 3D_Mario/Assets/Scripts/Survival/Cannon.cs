@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    public GameObject bullet;
+    public ObjectPoolingManager poolingManager;
 
     private float spawnTime;
     private float spawnCooldownTime;
@@ -22,9 +22,9 @@ public class Cannon : MonoBehaviour
     {
         var position = transform.position;
         position.y += transform.localScale.y * 0.7f;
-        Instantiate(bullet, position, transform.rotation);
+        //Instantiate(bullet, position, transform.rotation);
+        poolingManager.Get("bullet", position, transform.rotation);
         count += 1;
-        print("create bullet");
     }
 
     // Update is called once per frame
@@ -46,7 +46,6 @@ public class Cannon : MonoBehaviour
             InvokeRepeating("spawnObject", 1f, 3f);
             spawnCooldownTime = 0f;
             spawnTime = Random.Range(5f, 10f);
-            print("start create bullet");
         }
     }
 }
