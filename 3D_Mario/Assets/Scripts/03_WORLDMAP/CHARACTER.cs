@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CHARACTER : MonoBehaviour
 {
@@ -14,19 +16,18 @@ public class CHARACTER : MonoBehaviour
     public bool ISGROUND = true;
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
+    public TextMeshProUGUI LIFE_TEXT;
+    public AudioSource WORLDMAP_MUSIC;
     float h, v;
-
-    Vector3 _RespawnPoint;
-    bool _IsSuperJumping = false;
 
     void Start()
     {
         ANIMATOR = GetComponent<Animator>();
         RIGIDBODY = GetComponent<Rigidbody>();
-        _RespawnPoint = transform.position;
+        LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (ISCONTROLABLE)
         {
@@ -47,6 +48,7 @@ public class CHARACTER : MonoBehaviour
             transform.position += dir * CHARACTER_SPPED * Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * CHARACTER_ROTATE);
             ANIMATOR.SetBool("IS_RUN", true);
+
         }
         else
         {
@@ -56,142 +58,105 @@ public class CHARACTER : MonoBehaviour
 
     void JUMP()
     {
-        //!> ï¿½ß·ï¿½ ï¿½ï¿½ï¿½Óµï¿½ -9.81 -> -40ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. Edit - ProjectSetting - Physics
+        //!> Áß·Â °¡¼Óµµ -9.81 -> -40À¸·Î ¼öÁ¤. Edit - ProjectSetting - Physics
         if (Input.GetKey(KeyCode.Space) && ISGROUND)
         {
-            //!> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JUMPFORCEï¿½ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-
-            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE);
+            //!> À§ ¹æÇâÀ¸·Î JUMPFORCE¸¸Å­ ÈûÀ» °¡ÇÔ
+            RIGIDBODY.AddForce(Mario.transform.up * JUMPFORCE);
             _Dust._Particle.Stop();
             ANIMATOR.SetTrigger("JUMP");
             ISGROUND = false;
+            SOUND_MNG.H.PlaySound("JUMP");
         }
     }
+
 
     void OnCollisionEnter(Collision collision)
     {
-
-        if (Mathf.Epsilon < collision.relativeVelocity.y)
+        //!> Ä³¸¯ÅÍ¿Í Ãæµ¹ÇÑ ¹°Ã¼ÀÇ ÅÂ±×°¡ GroundÀÏ¶§ Á¡ÇÁ °»½Å
+        if (collision.gameObject.CompareTag("Ground"))
         {
             ISGROUND = true;
-            _IsSuperJumping = false;
         }
-        /////////// Made by WC //////////////////////////////////////
-        if (collision.gameObject.CompareTag("JumpBooster"))
-        {
-            RIGIDBODY.AddForce(Mario.transform.up * 1500.0f);
-            _Dust._Particle.Stop();
-        }
-        /////////////////////////////////////////////////////////////
+
         if (collision.gameObject.CompareTag("Monster"))
         {
-            if (DATA_MNG.H.CHARACTER_HP == 0)
+            if (DATA_MNG.H.CHARACTER_HP == 1)
             {
-                DATA_MNG.H.CHARACTER_HP = 1;
-                DATA_MNG.H.CHARACTER_LIFE -= 1;
-                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                WORLDMAP_MUSIC.Stop();
+                SOUND_MNG.H.PlaySound("DEATH");
+                
+                DATA_MNG.H.CHARACTER_HP = 5;
+                DATA_MNG.H.CHARACTER_COIN = 0;
+                SAVEDATA_MNG.SAVE_DATA();
+                StartCoroutine(WaitForIt());
+                WORLDMAP_UI.H.FadeStart();
             }
             else
             {
+                SOUND_MNG.H.PlaySound("OUCH");
                 DATA_MNG.H.CHARACTER_HP -= 1;
+                LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
             }
         }
-    }
 
+
+    }
+    IEnumerator WaitForIt()
+    {
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene("06_GAMEOVER");
+    }
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            CHARACTER_UI.H.click();
+            DATA_MNG.H.CHARACTER_COIN += 1;
+            SOUND_MNG.H.PlaySound("COIN");
+            LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
+        }
+
         if (other.gameObject.CompareTag("WORLD1-2"))
         {
             WORLDMAP_UI.H.FadeStart();
+            SAVEDATA_MNG.SAVE_DATA();
             LOAD_MNG.LoadScene("COMMON_STAGE");
         }
         else if (other.gameObject.CompareTag("WORLD1-3"))
         {
             WORLDMAP_UI.H.FadeStart();
+
             LOAD_MNG.LoadScene("Survival");
         }
         else if (other.gameObject.CompareTag("WORLD1-4"))
         {
             WORLDMAP_UI.H.FadeStart();
+
+            LOAD_MNG.LoadScene("YSK_WORLD1");
+        }
+        else if (other.gameObject.CompareTag("WORLD1-5"))
+        {
+            WORLDMAP_UI.H.FadeStart();
+
             LOAD_MNG.LoadScene("04_BOSSMAP");
         }
     }
 
 
     // vvv SUNKUE
-    public void SetRespawn(Vector3 respawnPoint)
-    {
-        _RespawnPoint = respawnPoint;
-    }
-
-    // skill
-    public void Respawn()
-    {
-        print("respawn");
-        transform.position = _RespawnPoint;
-        transform.rotation = Quaternion.identity;
-        ISCONTROLABLE = true;
-    }
-
-    bool _IsDashing = false;
-    float _origin_characterspeed;
-    public void Dash()
-    {
-        if (!_IsDashing)
-        {
-            print("Dash");
-            _IsDashing = true;
-            _origin_characterspeed = CHARACTER_SPPED;
-            StartCoroutine(DashCoroutine());
-        }
-    }
-
-    IEnumerator DashCoroutine()
-    {
-        const float boostingtime = 2f;
-        const float prespeedingtime = 1f;
-        float _interval_time = 0f;
-
-
-        for (; _interval_time <= prespeedingtime; _interval_time += Time.deltaTime)
-        {
-            CHARACTER_SPPED = Mathf.Lerp(CHARACTER_SPPED, _origin_characterspeed * 3.4f, Time.deltaTime);
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-
-        for (; _interval_time <= boostingtime; _interval_time += Time.deltaTime)
-        {
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-
-        CHARACTER_SPPED = _origin_characterspeed;
-        _IsDashing = false;
-    }
-
-    public void SuperJump()
-    {
-        if (!_IsSuperJumping)
-        {
-            print("SuperJump");
-            _IsSuperJumping = true;
-            RIGIDBODY.AddForce(Vector3.up * JUMPFORCE * 2);
-            ANIMATOR.SetTrigger("JUMP");
-            ISGROUND = false;
-        }
-    }
-
     void ACTION()
     {
         ACTIONKEY_ON = Input.GetKey(KeyCode.LeftControl);
     }
 
-    public bool GET_ACTIONKEY_ON()
+    internal bool GET_ACTIONKEY_ON()
     {
         return ACTIONKEY_ON;
     }
 
 
-    public void ReadyAnimate()
+    void ReadyPipeAnimate()
     {
         ACTIONKEY_ON = false;
         ISCONTROLABLE = false;
@@ -202,7 +167,7 @@ public class CHARACTER : MonoBehaviour
         ANIMATOR.SetBool("IS_RUN", false);
     }
 
-    public void FinishAnimate()
+    void FinishPipeAnimate()
     {
         ISCONTROLABLE = true;
         RIGIDBODY.detectCollisions = true;
@@ -210,21 +175,19 @@ public class CHARACTER : MonoBehaviour
         RIGIDBODY.freezeRotation = false;
     }
 
-    public void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
+    internal void OnPipeEnter(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyAnimate();
+        ReadyPipeAnimate();
         transform.position = pipe.GetHolePositionOutside();
         StartCoroutine(AnimateOnPipeAction(pipe, true));
     }
 
-    public void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
+    internal void OnPipeExit(YSK_PIPE_HOLE_SCRIPT pipe)
     {
-        ReadyAnimate();
+        ReadyPipeAnimate();
         transform.position = pipe.GetHolePositionInside();
         StartCoroutine(AnimateOnPipeAction(pipe, false));
     }
-
-
 
     IEnumerator AnimateOnPipeAction(YSK_PIPE_HOLE_SCRIPT pipe, bool enter)
     {
@@ -254,7 +217,7 @@ public class CHARACTER : MonoBehaviour
         }
         else
         {
-            FinishAnimate();
+            FinishPipeAnimate();
         }
     }
     // ^^^ SUNKUE
