@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Goomba : MonoBehaviour
+public class Goomba_survival : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public bool isChase;
     public bool isAttack;
 
-    Rigidbody rigid;
-    BoxCollider boxCollider;
-    NavMeshAgent nav;
-    Animator anim;
+    private Rigidbody rigid;
+    private NavMeshAgent nav;
+    private Animator anim;
 
     void Awake()
     {
         target = GameObject.Find("Mario").transform;
         rigid = GetComponent<Rigidbody>();
-        boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
@@ -51,8 +49,8 @@ public class Goomba : MonoBehaviour
 
     void Targeting()
     {
-        float targetRadius = 0.5f;
-        float targetRange = 0.5f;
+        float targetRadius = 0.4f;
+        float targetRange = 0.4f;
 
         RaycastHit[] rayHits =
             Physics.SphereCastAll(transform.position,
@@ -91,20 +89,18 @@ public class Goomba : MonoBehaviour
         FreezeVelocity();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             isChase = false;
             nav.enabled = false;
-
-            //Destroy(gameObject);
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision collision)
     {
-        if (other.tag == "Player")
+        if (collision.gameObject.CompareTag("Player") )
         {
             isChase = true;
             nav.enabled = true;

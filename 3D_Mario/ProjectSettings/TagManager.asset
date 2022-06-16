@@ -13,6 +13,7 @@ TagManager:
   - WORLD1-2
   - WORLD1-3
   - WORLD1-4
+  - Spike
   layers:
   - Default
   - TransparentFX
