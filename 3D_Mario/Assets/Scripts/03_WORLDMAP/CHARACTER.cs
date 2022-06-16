@@ -105,6 +105,12 @@ public class CHARACTER : MonoBehaviour
             }
         }
 
+        // made by WC
+        if (collision.gameObject.CompareTag("JumpBooster"))
+        {
+            RIGIDBODY.AddForce(Mario.transform.up * 1500.0f);
+            _Dust._Particle.Stop();
+        }
 
     }
     IEnumerator WaitForIt()
