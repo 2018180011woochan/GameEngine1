@@ -9,9 +9,14 @@ public class CoinDoor : MonoBehaviour
     public GameObject KeyHole1;
     public GameObject KeyHole2;
 
+    AudioSource audioSource;
+    public AudioClip audioDoor;
+    bool isPlaySound = false;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -31,5 +36,13 @@ public class CoinDoor : MonoBehaviour
     public void SetOpen()
     {
         anim.SetBool("isOpen", true);
+
+        if (!isPlaySound)
+        {
+            audioSource.clip = audioDoor;
+            audioSource.Play();
+            isPlaySound = true;
+        }    
+
     }
 }

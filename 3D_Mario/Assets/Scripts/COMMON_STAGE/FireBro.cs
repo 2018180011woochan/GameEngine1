@@ -14,18 +14,17 @@ public class FireBro : MonoBehaviour
     Rigidbody rigid;
     Animator anim;
 
+    AudioSource audioSource;
+    public AudioClip audioFireball;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         anim.SetBool("isWait", true);
-        //StartCoroutine(Attack());
+        audioSource = GetComponent<AudioSource>();
     }
-    void Update()
-    {
 
-
-    }
     void FixedUpdate()
     {
         if (target.transform.position.z < 65f || target.transform.position.z > 80f)
@@ -42,11 +41,6 @@ public class FireBro : MonoBehaviour
             Vector3 dir = target.transform.position - transform.position;
             transform.rotation = Quaternion.LookRotation(dir).normalized;
         }
-    }
-
-    void ThrowBoomerang()
-    {
-
     }
 
     void Attack()
@@ -74,6 +68,9 @@ public class FireBro : MonoBehaviour
                     dir.y = 10;
                     rigidFireBall.AddForce(dir, ForceMode.Impulse);
                     isThrow = true;
+
+                    audioSource.clip = audioFireball;
+                    audioSource.Play();
                 }
             }
 

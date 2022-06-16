@@ -11,8 +11,12 @@ public class BulletCannon : MonoBehaviour
     public GameObject bullet;
     public GameObject player;
 
+    AudioSource audioSource;
+    public AudioClip audioBullet;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(Fire());
     }
 
@@ -30,6 +34,9 @@ public class BulletCannon : MonoBehaviour
             {
                 GameObject instantBullet = Instantiate(bullet, bulletPos.position, Quaternion.Euler(0f, -90f, 0f));
             }
+
+            audioSource.clip = audioBullet;
+            audioSource.Play();
 
             yield return new WaitForSeconds(5f);
         }

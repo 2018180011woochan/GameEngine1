@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class KeyCoin : MonoBehaviour
 {
+    AudioSource audioSource;
+
     void Awake()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -18,9 +20,8 @@ public class KeyCoin : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //Debug.Log("KeyCoin");
+            audioSource.Play();
             gameObject.SetActive(false);
-            //Destroy(gameObject);
         }
     }
 }

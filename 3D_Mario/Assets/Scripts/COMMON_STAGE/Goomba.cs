@@ -14,14 +14,16 @@ public class Goomba : MonoBehaviour
     NavMeshAgent nav;
     Animator anim;
 
+    AudioSource audioSource;
+    public AudioClip audioGoomba;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-
-        // Invoke("ChaseStart", 2);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void SetStart()
@@ -95,24 +97,6 @@ public class Goomba : MonoBehaviour
         FreezeVelocity();
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        isChase = false;
-    //        nav.enabled = false;
-    //    }
-    //}
-
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        isChase = true;
-    //        nav.enabled = true;
-    //    }
-    //}
-
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -124,10 +108,10 @@ public class Goomba : MonoBehaviour
             {
                 Rigidbody rigidPlayer = target.GetComponent<Rigidbody>();
                 rigidPlayer.AddForce(transform.up * 20f, ForceMode.Impulse);
-
-
-                //Destroy(gameObject);
                 gameObject.SetActive(false);
+
+                audioSource.clip = audioGoomba;
+                audioSource.Play();
             }
 
             else

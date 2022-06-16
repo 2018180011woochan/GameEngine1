@@ -5,18 +5,29 @@ using UnityEngine;
 public class Door_Common : MonoBehaviour
 {
     public bool isOpen = false;
+    bool isPlaySound = false;
     Animator anim;
+
+    AudioSource audioSource;
+    public AudioClip audioDoor;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
     {
         if (isOpen)
         {
-            //anim.SetBool("isChase", true);
+            if (!isPlaySound)
+            {
+                audioSource.clip = audioDoor;
+                audioSource.Play();
+
+                isPlaySound = true;
+            }
 
             if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
             {

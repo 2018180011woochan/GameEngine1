@@ -15,12 +15,15 @@ public class Koopa_Common : MonoBehaviour
     NavMeshAgent nav;
     Animator anim;
 
+    AudioSource audioSource;
+    public AudioClip audioKoopa;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     void ChaseStart()
@@ -93,6 +96,9 @@ public class Koopa_Common : MonoBehaviour
 
             if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
             {
+                audioSource.clip = audioKoopa;
+                audioSource.Play();
+
                 Rigidbody rigidPlayer = target.GetComponent<Rigidbody>();
                 rigidPlayer.AddForce(transform.up * 15f, ForceMode.Impulse);
 

@@ -7,13 +7,13 @@ public class Switch_Common : MonoBehaviour
     public bool isPress = false;
     Animator anim;
 
+    AudioSource audioSource;
+    public AudioClip audioSwitch;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
-    }
-
-    void FixedUpdate()
-    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -22,10 +22,14 @@ public class Switch_Common : MonoBehaviour
         {
             if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
             {
+                if (!isPress)
+                {
+                    audioSource.clip = audioSwitch;
+                    audioSource.Play();
+                }
                 anim.SetBool("isPress", true);
                 isPress = true;
             }
         }
     }
-
 }
