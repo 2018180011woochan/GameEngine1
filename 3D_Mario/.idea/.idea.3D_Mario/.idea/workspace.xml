@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9f4019b-7714-44a7-b270-018e2ceff065" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/03_WORLDMAP/CHARACTER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/03_WORLDMAP/CHARACTER.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3D_Mario/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource/Meterial/Sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource/Meterial/Sky.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/YSK_WORLD/YSK_WORLD1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YSK_WORLD/YSK_WORLD1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +88,8 @@
       <workItem from="1655186033114" duration="4965000" />
       <workItem from="1655278591689" duration="1642000" />
       <workItem from="1655382014375" duration="318000" />
-      <workItem from="1655384898014" duration="398000" />
+      <workItem from="1655384898014" duration="642000" />
+      <workItem from="1655385618344" duration="1201000" />
     </task>
     <servers />
   </component>
