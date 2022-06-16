@@ -7,7 +7,7 @@ public class Stage6Manager : MonoBehaviour
     public GameObject[] koopa;
     public GameObject door;
 
-    bool isOpen = false;
+    //bool isOpen = false;
 
     void Start()
     {

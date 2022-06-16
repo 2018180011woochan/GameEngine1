@@ -83,7 +83,8 @@ public class CHARACTER : MonoBehaviour
             _IsSuperJumping = false;
         }
 
-        if (collision.gameObject.CompareTag("Monster"))
+        if (collision.gameObject.CompareTag("Monster") ||collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Goomba") ||
+            collision.gameObject.CompareTag("Spike"))
         {
             if (DATA_MNG.H.CHARACTER_HP == 1)
             {

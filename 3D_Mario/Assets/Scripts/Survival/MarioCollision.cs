@@ -14,7 +14,7 @@ public class MarioCollision : MonoBehaviour
         life = 5;
         vulnerableTime = 0f;
     }
-
+/*
     private void FixedUpdate()
     {
         vulnerableTime -= Time.fixedDeltaTime;
@@ -23,8 +23,8 @@ public class MarioCollision : MonoBehaviour
         {
             SceneManager.LoadScene("02_WORLDMAP");
         }
-    }
-
+    }*/
+    /*
     private void OnCollisionStay(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -39,5 +39,5 @@ public class MarioCollision : MonoBehaviour
                 life -= 1;
             }
         }
-    }
+    }*/
 }
