@@ -94,8 +94,7 @@ public class Koopa_Common : MonoBehaviour
             anim.SetBool("isChase", false);
             anim.SetBool("isAttack", true);
 
-            if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
-            {
+            
                 audioSource.clip = audioKoopa;
                 audioSource.Play();
 
@@ -111,7 +110,6 @@ public class Koopa_Common : MonoBehaviour
                 rigidNakedKoopa.AddForce(transform.up * 15f, ForceMode.Impulse);
 
                 gameObject.SetActive(false);
-            }
         }
     }
 }

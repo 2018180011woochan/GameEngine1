@@ -105,15 +105,13 @@ public class Goomba : MonoBehaviour
             isChase = false;
             nav.enabled = false;
 
-            if (GameObject.Find("Mario").GetComponent<CHARACTER>().ISGROUND == false)
-            {
+            
                 Rigidbody rigidPlayer = target.GetComponent<Rigidbody>();
                 rigidPlayer.AddForce(transform.up * 20f, ForceMode.Impulse);
                 gameObject.SetActive(false);
 
                 audioSource.clip = audioGoomba;
                 audioSource.Play();
-            }
         }
     }
 
