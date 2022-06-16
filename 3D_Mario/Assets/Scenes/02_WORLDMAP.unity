@@ -4893,6 +4893,9 @@ MonoBehaviour:
   AudioJump2: {fileID: 8300000, guid: d86f3402fe016dc4a8a6cbdc8a19c968, type: 3}
   AudioJump3: {fileID: 8300000, guid: c93c9ee9c30788949a298bacc7572d97, type: 3}
   AudioCoin: {fileID: 8300000, guid: 23a5af3bcac44ce458c8dc34b9199aab, type: 3}
+  AudioDeath: {fileID: 8300000, guid: 20755608b1a301f43abd065df13ccfd4, type: 3}
+  AudioOuch1: {fileID: 8300000, guid: feb80554658fdeb40b6599f4b3abca9c, type: 3}
+  AudioOuch2: {fileID: 8300000, guid: 43cfc09f68e747a40a9a858dcf3a76a4, type: 3}
 --- !u!4 &437457351
 Transform:
   m_ObjectHideFlags: 0
@@ -6346,7 +6349,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575147795}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6696,11 +6699,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1601850270}
   - {fileID: 2007447967}
   - {fileID: 1645789488}
   - {fileID: 986658141}
   - {fileID: 546732862}
+  - {fileID: 1601850270}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11879,9 +11882,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3530565861508556715, guid: bf9f419ca202a1c44badfce89719b932, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 71262093}
+    - target: {fileID: -3530565861508556715, guid: bf9f419ca202a1c44badfce89719b932, type: 3}
       propertyPath: LIFE_TEXT
       value: 
       objectReference: {fileID: 515761070}
+    - target: {fileID: -3530565861508556715, guid: bf9f419ca202a1c44badfce89719b932, type: 3}
+      propertyPath: WORLDMAP_MUSIC
+      value: 
+      objectReference: {fileID: 71262093}
     - target: {fileID: 1885335131331726593, guid: bf9f419ca202a1c44badfce89719b932, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -12296,7 +12307,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575147795}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19812,7 +19823,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 575147795}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20368,7 +20379,7 @@ RectTransform:
   - {fileID: 1612920893}
   - {fileID: 367634885}
   m_Father: {fileID: 575147795}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25569,7 +25580,7 @@ RectTransform:
   - {fileID: 2127434260}
   - {fileID: 264299319}
   m_Father: {fileID: 575147795}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

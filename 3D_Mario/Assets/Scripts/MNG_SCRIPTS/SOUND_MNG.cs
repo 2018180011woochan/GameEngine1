@@ -8,7 +8,9 @@ public class SOUND_MNG : BASIC_SINGLETON<SOUND_MNG>
     public AudioClip AudioJump2;
     public AudioClip AudioJump3;
     public AudioClip AudioCoin;
-
+    public AudioClip AudioDeath;
+    public AudioClip AudioOuch1;
+    public AudioClip AudioOuch2;
     AudioSource audioSource;
     private void Awake()
     {
@@ -47,6 +49,22 @@ public class SOUND_MNG : BASIC_SINGLETON<SOUND_MNG>
 
             case "COIN":
                 audioSource.clip = AudioCoin;
+                break;
+            case "DEATH":
+                audioSource.clip = AudioDeath;
+                break;
+            case "OUCH":
+                {
+                    var rand = Random.Range(0, 2);
+                    if (rand == 0)
+                    {
+                        audioSource.clip = AudioOuch1;
+                    }
+                    else if (rand == 1)
+                    {
+                        audioSource.clip = AudioOuch2;
+                    }
+                }
                 break;
         }
         audioSource.Play();

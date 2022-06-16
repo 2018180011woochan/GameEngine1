@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class CHARACTER : MonoBehaviour
@@ -16,6 +17,7 @@ public class CHARACTER : MonoBehaviour
     public GameObject Mario;
     public CAHRACTER_DUST _Dust;
     public TextMeshProUGUI LIFE_TEXT;
+    public AudioSource WORLDMAP_MUSIC;
     float h, v;
 
     void Start()
@@ -79,12 +81,20 @@ public class CHARACTER : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Monster"))
         {
-            if (DATA_MNG.H.CHARACTER_HP == 0)
+            if (DATA_MNG.H.CHARACTER_HP == 1)
             {
-                // 이후 게임오버 제작
+                WORLDMAP_MUSIC.Stop();
+                SOUND_MNG.H.PlaySound("DEATH");
+                
+                DATA_MNG.H.CHARACTER_HP = 5;
+                DATA_MNG.H.CHARACTER_COIN = 0;
+                SAVEDATA_MNG.SAVE_DATA();
+                StartCoroutine(WaitForIt());
+                WORLDMAP_UI.H.FadeStart();
             }
             else
             {
+                SOUND_MNG.H.PlaySound("OUCH");
                 DATA_MNG.H.CHARACTER_HP -= 1;
                 LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
             }
@@ -92,7 +102,11 @@ public class CHARACTER : MonoBehaviour
 
 
     }
-
+    IEnumerator WaitForIt()
+    {
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene("06_GAMEOVER");
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
