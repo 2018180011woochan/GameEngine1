@@ -28,7 +28,7 @@ public class FireBro : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (target.transform.position.z < 65f)
+        if (target.transform.position.z < 65f || target.transform.position.z > 80f)
             return;
 
         Targeting();
