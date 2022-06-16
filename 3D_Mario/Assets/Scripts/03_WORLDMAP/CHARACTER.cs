@@ -114,6 +114,14 @@ public class CHARACTER : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("MushRoom"))
+        {
+            DATA_MNG.H.CHARACTER_HP += 1;
+            SOUND_MNG.H.PlaySound("COIN");
+            LIFE_TEXT.text = "<sprite name=\"MarioNum_" + DATA_MNG.H.CHARACTER_HP.ToString() + "\">";
+        }
+        
+        
         if (other.gameObject.CompareTag("Coin"))
         {
             CHARACTER_UI.H.click();

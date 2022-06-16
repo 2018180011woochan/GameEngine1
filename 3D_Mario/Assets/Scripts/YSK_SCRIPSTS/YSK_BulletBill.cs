@@ -11,9 +11,9 @@ public class YSK_BulletBill : MonoBehaviour
         transform.position += speed * transform.forward * Time.deltaTime;
     }
    
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             print("bulletCollide");
             GameObject.FindObjectOfType<YSK_CannonManager>().ReloadCannons();
