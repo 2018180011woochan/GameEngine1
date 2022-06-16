@@ -106,6 +106,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3993466820737894698, guid: b413fa893bd4b214fb003fc07509609d, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: b413fa893bd4b214fb003fc07509609d, type: 3}
       propertyPath: m_Name
       value: YSK Bullet Bill Cannon
@@ -155,7 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPos: {fileID: 4812278753817944256}
   bullet: {fileID: 8678870290479793524, guid: 0e437138ad2e8234091d0e7f96c76d34, type: 3}
-  shotTime: 5
 --- !u!4 &3267427491332365437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b413fa893bd4b214fb003fc07509609d, type: 3}

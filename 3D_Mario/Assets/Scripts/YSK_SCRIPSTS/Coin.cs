@@ -13,8 +13,6 @@ public class Coin : MonoBehaviour
         if (mario)
         {
             accqired = true;
-            FindObjectOfType<DATA_MNG>().CHARACTER_COIN++;
-            FindObjectOfType<CHARACTER_UI>().click();
             StartCoroutine(AccquireEffetct());
         }
     }
